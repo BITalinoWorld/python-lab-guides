@@ -1,7 +1,5 @@
 ![Header](images/bitalinoheader.jpg)
-Bitalino python lab guide
-
-[Project](lab-project.md)
+Bitalino python lab guide based on a presentation created by Hugo Silva. Adapted by Miquel Alfaras and Hugo Gamboa.
 
 * [0 Setting up](#settingup)
 * [1 Acquisition](#acq)
