@@ -8,8 +8,9 @@ Adapted by Miquel Alfaras and Hugo Gamboa.*
 * [3 Process a signal](#process)
 * [4 Measure and actuate with BITalino](#measure)
 * [5 Online processing of signals](#online)
-* [6 Template of project](#template)
-* [7 Webbrowser](#browser)
+* [6 Live on the Webbrowser](#browser)
+* [7 External links](#external)
+
 
 ![bar](images/bitalinobar.jpg)
 ##  0 Setting up <a name="settingup"></a>
@@ -236,10 +237,12 @@ Open ClienBIT.html with a browser and watch your signals in real time. Graphics 
 http://www.flotcharts.org/flot/examples/basic-options/index.html
 
 ![bar](images/bitalinobar.jpg)
-## 8 External link <a name="external"></a>
-Bitalino Forum
+## 7 External links <a name="external"></a>
+BITalino Forum http://forum.bitalino.com/
 
-Bitalino API documentation 
+BITalino APIs http://bitalino.com/en/development/apis
+
+BITalino python API documentation http://bitalino.com/pyAPI/
 ...
 ![bar](images/bitalinobar.jpg)
 ## Installation Notes 
