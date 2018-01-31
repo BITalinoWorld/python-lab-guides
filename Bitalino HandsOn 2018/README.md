@@ -144,6 +144,7 @@ print "LIGHTS ON" if toggle else "LIGHTS OFF"
 device.close()
 ```
 
+[ButtonBIT.py](ButtonBIT.py)
 ```
 import bitalino
 
@@ -172,11 +173,6 @@ device.close()
 
 ```
 
-
-[ButtonBIT.py](ButtonBIT.py)
-
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/LOFUTNEgrv4/0.jpg)](https://www.youtube.com/watch?v=LOFUTNEgrv4)
-![bar](images/bitalinobar.jpg)
 ## 5 Online processing of signals <a name="online"></a>
 MuscleBIT.py 
 ```
@@ -238,12 +234,18 @@ http://www.flotcharts.org/flot/examples/basic-options/index.html
 
 ![bar](images/bitalinobar.jpg)
 ## 7 External links <a name="external"></a>
-BITalino Forum http://forum.bitalino.com/
+BITalino Forum: http://forum.bitalino.com/
 
-BITalino APIs http://bitalino.com/en/development/apis
+BITalino APIs: http://bitalino.com/en/development/apis
 
-BITalino python API documentation http://bitalino.com/pyAPI/
-...
+BITalino python API documentation: http://bitalino.com/pyAPI/
+
+Youtube channel: https://www.youtube.com/user/BITalinoWorld/videos
+
+https://www.plux.info
+http://bitalino.com/
+http://www.biosignalsplux.com/
+
 ![bar](images/bitalinobar.jpg)
 ## Installation Notes 
 
@@ -306,7 +308,7 @@ Should see the led turning on or off
 
 
 
-### On Macos
+### On Mac OS (for Python 2)
 
 1. Install Anaconda2.7 
 https://repo.continuum.io/archive/
