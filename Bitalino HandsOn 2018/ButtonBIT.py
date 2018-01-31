@@ -1,9 +1,12 @@
-# -*- coding: utf-8 -*-
 import bitalino
 
 import numpy
 
-macAddress = "/dev/tty.BITalino-60-88-DevB"
+# Mac OS
+macAddress = "/dev/tty.BITalino-01-93-DevB"
+
+# Windows
+# macAddress = "XX:XX:XX:XX:XX:XX"
 
 device = bitalino.BITalino(macAddress)
 
