@@ -172,9 +172,10 @@ while True:
 device.close()
 
 ```
+![bar](images/bitalinobar.jpg)
 
 ## 5 Online processing of signals <a name="online"></a>
-MuscleBIT.py 
+[MuscleBIT.py](MuscleBIT.py)
 ```
 import bitalino
 
