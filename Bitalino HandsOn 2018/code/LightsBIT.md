@@ -18,7 +18,9 @@ macAddress = "XX:XX:XX:XX:XX:XX"
 device = bitalino.BITalino(macAddress)
 ```
 3 - Get your device's state. This will show information about the battery, the analog channels and the digital channels (IN and OUT).
-We are interested in the digital channels, which are numbered as: [IN 1, IN 2, OUT 1, OUT 2] = [0, 1, 2, 3]. LED light is located at OUT 1, so what is its state?
+We are interested in the digital channels, which are numbered as: [IN 1, IN 2, OUT 1, OUT 2] = [0, 1, 2, 3]. 
+
+LED light is located at OUT 1, so what is its state?
 
 ```
 state = device.state()
