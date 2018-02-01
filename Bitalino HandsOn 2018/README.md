@@ -139,7 +139,7 @@ device.trigger([toggle, 0])
 
 device.battery(0 if toggle else 63)
 
-print "LIGHTS ON" if toggle else "LIGHTS OFF"
+print ("LIGHTS ON") if toggle else ("LIGHTS OFF")
 
 device.close()
 ```
@@ -167,7 +167,7 @@ while True:
     
     device.battery(0 if toggle else 63)
     
-    print "LIGHTS ON" if toggle else "LIGHTS OFF"
+    print ("LIGHTS ON") if toggle else ("LIGHTS OFF")
 
 device.close()
 
@@ -196,7 +196,7 @@ nframes = 100
 threshold = 5
 
 device.start(srate, [0])
-print "START"
+print ("START")
 
 try:
     while True:
@@ -215,7 +215,7 @@ try:
             device.trigger([0, 0])
 
 finally:
-    print "STOP"
+    print ("STOP")
     device.stop()
     device.close()
 ```
