@@ -144,7 +144,8 @@ print ("LIGHTS ON") if toggle else ("LIGHTS OFF")
 device.close()
 ```
 
-[ButtonBIT.py](ButtonBIT.py)
+ButtonBIT script launches a continuous the acquisition of BITalino button state. Depending on whther you press or not the button, LED light will turn ON and OFF accordingly. 
+[ButtonBIT.py](ButtonBIT.py):
 ```
 import bitalino
 
