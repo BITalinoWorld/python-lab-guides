@@ -1,5 +1,5 @@
 ![Header](images/bitalinoheader.jpg)
-*Bitalino python lab guide based on a presentation created by Hugo Silva. 
+*BITalino python lab guide based on a presentation created by Hugo Silva. 
 Adapted by Miquel Alfaras and Hugo Gamboa.*
 https://github.com/BITalinoWorld/python-lab-guides/tree/master/BITalino%20Hands-on
 
