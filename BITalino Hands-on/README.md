@@ -75,14 +75,14 @@ Default PIN is **1234**.
 
 Proceed to opening a signal data file sample [SampleEMG.txt](SampleEMG.txt).
 
-You can use python script [LoadFile.py](LoadFile.py):
+You can use the python script [LoadFile.py](LoadFile.py). This code uses pylab tools to import an EMG signal sample:
 ```
+%matplotlib inline
 from pylab import *
 
 data = loadtxt("SampleEMG.txt")
 
 plot(data[:,5])
-show()
 ```
 
 Use this code in spyder or in a Jupyter notebook
@@ -91,8 +91,10 @@ Use this code in spyder or in a Jupyter notebook
 
 Based on the previous code process the EMG signal to compute the envelope of the EMG (smooth the abs of the signal after removing the mean)
 
-You can use python script [ProcessFile.py](ProcessFile.py):
+You can use python script [ProcessFile.py](ProcessFile.py). 
+This script loads an EMG signal sample in order to remove its baseline and apply a low-pass filter to it:
 ```
+%matplotlib inline
 from pylab import *
 from numpy import *
 from scipy import signal
@@ -110,14 +112,12 @@ proc_data = lowpass(abs_data, 10) #Filter with a lowpass filter at 10Hz
 plot(data)
 
 plot(proc_data)
-
-show()
 ```
 
 ![bar](images/bitalinobar.jpg)
 ## 4 Measure and actuate with BITalino (asynchronous) <a name="measure"></a>
-
-[LightsBIT.py](LightsBIT.py)
+This script allows switching ON and OFF the BITalino LED light, printing its state on screen.
+[LightsBIT.py](LightsBIT.py):
 ```
 import bitalino
 
@@ -175,7 +175,7 @@ device.close()
 ![bar](images/bitalinobar.jpg)
 
 ## 5 Online processing of signals <a name="online"></a>
-[MuscleBIT.py](MuscleBIT.py)
+This script detects an EMG signal envelope and determines whether a certain threshold is exceeded. [MuscleBIT.py](MuscleBIT.py):
 ```
 import bitalino
 
