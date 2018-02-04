@@ -147,7 +147,7 @@ device.close()
 A detailed version notebook of this script can be seen at [LightsBIT_steps.ipynb](detailed/LightsBIT_steps.ipynb)
 
 
-ButtonBIT script launches a continuous the acquisition of BITalino button state. Depending on whther you press or not the button, LED light will turn ON and OFF accordingly. 
+ButtonBIT script launches a continuous the acquisition of BITalino button state. Depending on whether you press or not the button, LED light will turn ON and OFF accordingly. 
 [ButtonBIT.py](ButtonBIT.py):
 ```
 import bitalino
