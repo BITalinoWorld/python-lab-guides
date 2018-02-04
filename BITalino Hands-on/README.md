@@ -90,7 +90,7 @@ A detailed version notebook of this script can be seen at [LoadFile_steps.ipynb]
 ![bar](images/bitalinobar.jpg)
 ## 3 Process a signal <a name="process"></a>
 
-Based on the previous code process the EMG signal to compute the envelope of the EMG (smooth the abs of the signal after removing the mean)
+Based on the previous code, process the EMG signal to compute the envelope of the EMG (smooth the abs of the signal after removing the mean)
 
 You can use python script [ProcessFile.py](ProcessFile.py). 
 This script loads an EMG signal sample in order to remove its baseline and apply a low-pass filter to it:
@@ -144,6 +144,8 @@ print ("LIGHTS ON") if toggle else ("LIGHTS OFF")
 
 device.close()
 ```
+A detailed version notebook of this script can be seen at [LightsBIT_steps.ipynb](detailed/LightsBIT_steps.ipynb)
+
 
 ButtonBIT script launches a continuous the acquisition of BITalino button state. Depending on whther you press or not the button, LED light will turn ON and OFF accordingly. 
 [ButtonBIT.py](ButtonBIT.py):
@@ -174,10 +176,11 @@ while True:
 device.close()
 
 ```
+A detailed version notebook of this script can be seen at [ButtonBIT_steps.ipynb](detailed/ButtonBIT_steps.ipynb)
 ![bar](images/bitalinobar.jpg)
 
 ## 5 Online processing of signals <a name="online"></a>
-This script detects an EMG signal envelope and determines whether a certain threshold is exceeded. [MuscleBIT.py](MuscleBIT.py):
+This script detects an EMG signal envelope and turns the buzzer ON in case a certain threshold is exceeded. [MuscleBIT.py](MuscleBIT.py):
 ```
 import bitalino
 
@@ -221,11 +224,11 @@ finally:
     device.stop()
     device.close()
 ```
-
+A detailed version notebook of this script can be seen at [MuscleBIT_steps.ipynb](detailed/MuscleBIT_steps.ipynb)
 
 ![bar](images/bitalinobar.jpg)
-## 6 Live on the Webbrowser <a name="browser"></a>
-Demo of serverbit + webrowser
+## 6 Live on the Web browser <a name="browser"></a>
+Demo of serverbit + web browser
 
 BITalino revolution ServerBIT is a utility that helps you stream your signals in real time on a webbrowser (ClientBIT.html)
 https://github.com/BITalinoWorld/revolution-python-serverbit
