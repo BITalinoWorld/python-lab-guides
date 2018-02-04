@@ -85,7 +85,8 @@ data = loadtxt("SampleEMG.txt")
 plot(data[:,5])
 ```
 
-Use this code in spyder or in a Jupyter notebook
+Use this code in spyder or in a Jupyter notebook.
+A detailed version notebook of this script can be seen at [LoadFile_steps.ipynb](/detailed/LoadFile_steps.ipynb)
 ![bar](images/bitalinobar.jpg)
 ## 3 Process a signal <a name="process"></a>
 
