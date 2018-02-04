@@ -1,5 +1,4 @@
 import bitalino
-
 import numpy
 import time
 
