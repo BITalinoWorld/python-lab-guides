@@ -50,6 +50,8 @@ Once your BITalino is turned on, pair the device with your computer via the Blue
 
 **IMPORTANT NOTE:** The MAC address is the sequence `XX:XX:XX:XX:XX:XX` found on the label on the back of the devices' BT block or on the back of the cardboard packaging where the device is shipped.
 
+The following steps should guide you through to a first glimpse of your signals in real-time:
+
 - Launch **OpenSignals (r)evolution**
 
 - Enable your device for acquisition by pressing the magnifying glass icon on the main screen and clicking the box showing the MAC address of your device (this is a one-time process)  
@@ -277,7 +279,7 @@ Data is streamed using [WebSockets](https://developer.mozilla.org/en-US/docs/Web
 
 With the ServerBIT running, is you open the [ClientBIT.html](https://github.com/BITalinoWorld/revolution-python-serverbit/blob/master/ClientBIT.html) sample web page (source code shown bellow) will display the signals from the sensor connected to channel `A1` in real time. 
 
-Graphics are managed with the ``Flot`` library; feel free to scavange the web and explore the `HTML/CSS/JavaScript` source code to get the best data presentation features: http://www.flotcharts.org/flot/examples/basic-options/index.html
+The `ClientBIT.html` user interface is implemented using open technologies, namely `HTML/CSS/JavaScript`, with graphics managed using the [Flot](http://www.flotcharts.org/flot/examples/basic-options/index.html) library, so feel free to scavange the web and fiddle with the source code to adapt it to your particular ideas.
 
 ```html
 <html>
@@ -314,17 +316,17 @@ Graphics are managed with the ``Flot`` library; feel free to scavange the web an
 
 ![bar](images/bitalinobar.jpg)
 ## 7. External Links <a name="external"></a>
-BITalino Forum: http://forum.bitalino.com/
 
-BITalino APIs: http://bitalino.com/en/development/apis
+- BITalino Forum allows you to learn, share and discuss your experiences with others: http://forum.bitalino.com/
 
-BITalino python API documentation: http://bitalino.com/pyAPI/
+- BITalino Python API documentation is available here: http://bitalino.com/pyAPI/
 
-Youtube channel: https://www.youtube.com/user/BITalinoWorld/videos
+- BITalino APIs for several other languages can be found at: http://bitalino.com/en/development/apis
 
-https://www.plux.info
-http://bitalino.com/
-http://www.biosignalsplux.com/
+- BITalinoWorld channel on YouTube has a few nifty videos: https://www.youtube.com/user/BITalinoWorld/videos
+
+- [PLUX] (https://www.plux.info) and [biosignalsplux](http://www.biosignalsplux.com/) have solutions that enable you to extend your research
+
 
 ![bar](images/bitalinobar.jpg)
 ## Installation Notes 
