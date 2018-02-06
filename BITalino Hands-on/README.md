@@ -51,7 +51,8 @@ Once your BITalino is turned on, pair the device with your computer via the Blue
 
 - Launch **OpenSignals (r)evolution**
 
-- Enable your device for acquisition by pressing the magnifying glass icon on the main screen and clicking the box showing the MAC address of your device (this is a one-time process); **IMPORTANT NOTE:** The ENABLE button needs to be blue  
+- Enable your device for acquisition by pressing the magnifying glass icon on the main screen and clicking the box showing the MAC address of your device (this is a one-time process)  
+  **IMPORTANT NOTE:** The ENABLE button needs to be blue  
 
 - You can proceed directly to record data, but you can also use this screen to configure the acquisition settings for your device (e.g. select the channels to be acquired, identify the type of sensor or change the sampling rate)  
 
