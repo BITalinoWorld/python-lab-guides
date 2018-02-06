@@ -127,13 +127,12 @@ plot(proc_data)
 ![bar](images/bitalinobar.jpg)
 ## 4. Measure and Actuate with BITalino (Asynchronous) <a name="measure"></a>
 
-So far we've seen how to work with data recorded using OpenSignals (r)evolution in post-processing tasks. However, it is also possible to interact with the device directly from your Python program.
+Until now we've seen how to work with data recorded using OpenSignals (r)evolution in post-processing tasks, however, it is also possible to interact with the device directly from your Python program.
 
-The BITalino MCU supports multiple operation modes (detailed in the [datasheet](http://bitalino.com/datasheets/REVOLUTION_MCU_Block_Datasheet.pdf)), which are conveniently accessible through high-level methods provided on the [APIs](http://bitalino.com/en/development/apis). Our experiments will use the [Python API](https://github.com/BITalinoWorld/revolution-python-api), for which documentation is available here:
+The BITalino MCU supports multiple operation modes (detailed in the [datasheet](http://bitalino.com/datasheets/REVOLUTION_MCU_Block_Datasheet.pdf)), which are conveniently exposed through user-friendly high-level methods provided on the [APIs](http://bitalino.com/en/development/apis). Our experiments will use the [Python API](https://github.com/BITalinoWorld/revolution-python-api), for which documentation is available here:
 http://bitalino.com/pyAPI/
 
-This script allows switching ON and OFF the BITalino LED light, printing its state on screen.
-[LightsBIT.py](LightsBIT.py):
+The example [LightsBIT.py](LightsBIT.py) (shown bellow) demonstrates how to read and change the [state](http://bitalino.com/pyAPI/#bitalino.BITalino.state) of the device. Whenever the program is executed, the LED actuator and the battery level indicator will turn ON if they were turned off and turn OFF otherwise, printing its state on screen.
 ```
 import bitalino
 
