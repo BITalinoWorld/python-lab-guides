@@ -173,7 +173,6 @@ This is illustrated on our [ButtonBIT.py](ButtonBIT.py) example (shown bellow), 
 By default, the BTN sensor is connected to the BITalino digital input I1 (hence the fetching of `state['digitalChannels'][0]`), and depending on whether the button is pressed, the abovementioned LEDs will turn ON or OFF accordingly.
 
 A detailed version notebook of this script can be seen at [ButtonBIT_steps.ipynb](detailed/ButtonBIT_steps.ipynb)
-![bar](images/bitalinobar.jpg)
 
 ```python 
 import bitalino
@@ -203,6 +202,7 @@ device.close()
 ```
 
 
+![bar](images/bitalinobar.jpg)
 ## 5. Real-Time Signal Processing <a name="online"></a>
 
 In the previous section we have seen how to asynchronously interface with BITalino from within a Python program. A big downside of asynchronous communication is the fact that the time in-between readings (i.e. sampling interval) is variable. 
@@ -266,7 +266,7 @@ finally:
 ![bar](images/bitalinobar.jpg)
 ## 6. Live on the Web Browser <a name="browser"></a>
 
-Struggling with data acquisition in Python?! We've handled part of the heavy load for you, by creating [ServerBIT](https://github.com/BITalinoWorld/revolution-python-serverbit), an easy-to-install software bundle that runs in a service-like manner, continuously streaming data from the device to third-party applications (e.g. your web browser).
+Struggling with data acquisition in Python?! We've handled part of the heavy load for you by creating [ServerBIT](https://github.com/BITalinoWorld/revolution-python-serverbit), an easy-to-install software bundle that runs in a service-like manner, continuously streaming data from the device to third-party applications (e.g. your web browser).
 
 Once installed, you need to configure the MAC address and channels to be acquired through the `config.json` by following the instructions described here:  
 https://github.com/BITalinoWorld/revolution-python-serverbit#pre-configured-installers
@@ -275,7 +275,7 @@ ServerBIT runs in a resilient automated manner, meaning that once it is launched
 
 Data is streamed using [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) technology, helping you receive the data stream even in a web browser. The [ClientBIT.html](https://github.com/BITalinoWorld/revolution-python-serverbit/blob/master/ClientBIT.html) sample code (shown bellow)
 
-```javascript
+```html
 <html>
     <script language="javascript" type="text/javascript" src="jquery.js"></script> 
     <script language="javascript" type="text/javascript" src="jquery.flot.js"></script> 
