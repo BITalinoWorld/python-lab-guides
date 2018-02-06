@@ -268,7 +268,7 @@ finally:
 
 Struggling with data acquisition in Python?! We've handled part of the heavy load for you by creating [ServerBIT](https://github.com/BITalinoWorld/revolution-python-serverbit), an easy-to-install software bundle that runs in a service-like manner, continuously streaming data from the device to third-party applications (e.g. your web browser).
 
-Once installed, you need to configure the MAC address and channels to be acquired through the `config.json` by following the instructions described here:  
+Once installed, you need to configure the MAC address and channels to be acquired through the [config.json](https://github.com/BITalinoWorld/revolution-python-serverbit#settings-in-configjson) by following the instructions described here:  
 https://github.com/BITalinoWorld/revolution-python-serverbit#pre-configured-installers
 
 ServerBIT runs in a resilient manner, meaning that once it is launched it will automatically attempt to connect to your configured device and even if the device is not turned on or the connection is lost, it will periodically attempt to reconnect and resume the data streaming process. 
@@ -277,8 +277,7 @@ Data is streamed using [WebSockets](https://developer.mozilla.org/en-US/docs/Web
 
 With the ServerBIT running, is you open the [ClientBIT.html](https://github.com/BITalinoWorld/revolution-python-serverbit/blob/master/ClientBIT.html) sample web page (source code shown bellow) will display the signals from the sensor connected to channel `A1` in real time. 
 
-Graphics are processed by **FLOT**. Feel free to source the web and inspect the codes to get the best data presentation features.
-http://www.flotcharts.org/flot/examples/basic-options/index.html
+Graphics are managed with the ``Flot`` library; feel free to scavange the web and explore the `HTML/CSS/JavaScript` source code to get the best data presentation features: http://www.flotcharts.org/flot/examples/basic-options/index.html
 
 ```html
 <html>
