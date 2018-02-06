@@ -317,13 +317,17 @@ The `ClientBIT.html` user interface is implemented using open technologies, name
 ![bar](images/bitalinobar.jpg)
 ## 7. External Links <a name="external"></a>
 
-- BITalino Forum allows you to learn, share and discuss your experiences with others: http://forum.bitalino.com/
+- BITalino Forum allows you to learn, share and discuss your experiences with others:   
+  http://forum.bitalino.com/
 
-- BITalino Python API documentation is available here: http://bitalino.com/pyAPI/
+- BITalino Python API documentation is available here:  
+  http://bitalino.com/pyAPI/
 
-- BITalino APIs for several other languages can be found at: http://bitalino.com/en/development/apis
+- BITalino APIs for several other languages can be found at:  
+  http://bitalino.com/en/development/apis
 
-- BITalinoWorld channel on YouTube has a few nifty videos: https://www.youtube.com/user/BITalinoWorld/videos
+- BITalinoWorld channel on YouTube has a few nifty videos:  
+  https://www.youtube.com/user/BITalinoWorld/videos
 
 - [PLUX] (https://www.plux.info) and [biosignalsplux](http://www.biosignalsplux.com/) have solutions that enable you to extend your research
 
