@@ -3,10 +3,10 @@ import numpy
 import time
 
 # Mac OS
-macAddress = "/dev/tty.BITalino-01-93-DevB"
+# macAddress = "/dev/tty.BITalino-XX-XX-DevB"
 
 # Windows
-# macAddress = "XX:XX:XX:XX:XX:XX"
+macAddress = "XX:XX:XX:XX:XX:XX"
    
 device = bitalino.BITalino(macAddress)
 time.sleep(1)
