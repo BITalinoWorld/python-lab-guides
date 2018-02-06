@@ -79,7 +79,7 @@ Once your BITalino is turned on, pair the device with your computer via the Blue
 
 Locate a recording on your hard drive; for your convenience, we provide the [SampleEMG.txt](SampleEMG.txt) file with a snippet of Electromyography (EMG) data.
 
-You can make a simple experiment using the Python script [LoadFile.py](LoadFile.py); this code uses the function `loadtxt` (in this case made available through the `PyLab` module) to load the recorded data onto a variable in your program:
+You can make a simple experiment using the Python script [LoadFile.py](LoadFile.py); this code uses the function `loadtxt` (in this case made available through the `PyLab` module), to load the recorded data onto a variable in your program:
 ```
 %matplotlib inline
 from pylab import *
@@ -89,8 +89,12 @@ data = loadtxt("SampleEMG.txt")
 plot(data[:,5])
 ```
 
-Use this code in spyder or in a Jupyter notebook.
-A detailed version notebook of this script can be seen at [LoadFile_steps.ipynb](detailed/LoadFile_steps.ipynb)
+Use this code in spyder or in a Jupyter notebook (a detailed notebook version of this script can be seen at [LoadFile_steps.ipynb](detailed/LoadFile_steps.ipynb)).
+
+**IMPORTANT NOTE:** Information about the content of the files recorded using OpenSignals (r)evolution can be found at:  
+http://forum.bitalino.com/viewtopic.php?f=15&t=481&p=1553#p1553  
+
+
 ![bar](images/bitalinobar.jpg)
 ## 3. Post-Processing a Signal <a name="process"></a>
 
