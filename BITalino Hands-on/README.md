@@ -343,7 +343,7 @@ The `ClientBIT.html` user interface is implemented using open technologies, name
 https://repo.continuum.io/archive/
 
 2. Install dependencies
-```bash
+```sh
 pip install pyserial
 ```
 
