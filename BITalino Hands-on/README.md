@@ -2,14 +2,14 @@
 *BITalino Python lab guide based on the workshop materials created by Hugo Silva. 
 Adapted by Miquel Alfaras and Hugo Gamboa.*
 
-* [0. Setting up](#settingup)
-* [1. Acquisition](#acq)
-* [2. Opening Recorded Data in Python](#opensignal)
-* [3. Post-Processing a Signal](#process)
-* [4. Measure and Actuate with BITalino](#measure)
-* [5. Real-Time Signal Processing](#online)
-* [6. Live on the Web Browser](#browser)
-* [7. External Links](#external)
+[0. Setting up](#settingup)  
+[1. Acquisition](#acq)  
+[2. Opening Recorded Data in Python](#opensignal)  
+[3. Post-Processing a Signal](#process)  
+[4. Measure and Actuate with BITalino](#measure)  
+[5. Real-Time Signal Processing](#online)  
+[6. Live on the Web Browser](#browser)  
+[7. External Links](#external)  
 
 
 ![bar](images/bitalinobar.jpg)
