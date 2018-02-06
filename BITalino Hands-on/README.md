@@ -10,6 +10,7 @@ Adapted by Miquel Alfaras and Hugo Gamboa.*
 [5. Real-Time Signal Processing](#online)  
 [6. Live on the Web Browser](#browser)  
 [7. External Links](#external)  
+  
 [A. Installation Notes](#installationnotes)
 
 
@@ -370,9 +371,9 @@ Should see data collected by BITalino printed on the console
   https://repo.continuum.io/archive/
 
 2. Install dependencies
-  ```bash
-  pip install pyserial
-  ```
+    ```bash
+    pip install pyserial
+    ```
   
 3. Download and install old PyBluez (2.7) package wheel for the user platform (e.g. WinX64), not available from PyBluez PyPi resources
 https://www.lfd.uci.edu/~gohlke/pythonlibs/#pybluez
