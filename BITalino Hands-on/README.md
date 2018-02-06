@@ -376,36 +376,33 @@ PyBluez‑0.22‑cp35‑none‑win_amd64.whl
 3. Download and install old PyBluez (2.7) package wheel for the user platform (e.g. WinX64), not available from PyBluez PyPi resources
 https://www.lfd.uci.edu/~gohlke/pythonlibs/#pybluez
 PyBluez‑0.22‑cp27‑none‑win_amd64.whl
-  ```bash
-  pip install PyBluez-0.22-cp27-none-win_amd64.whl
-  ```
+    ```bash
+    pip install PyBluez-0.22-cp27-none-win_amd64.whl
+    ```
 
 
 4. Install the BITalino API
-  ```bash
-  pip install bitalino
-  ```
+    ```bash
+    pip install bitalino
+    ```
 
 5. Test `LightsBIT.py` (e.g. with a Jupyter notebook test file); you should see the LED actuator turning ON or OFF
 
 
 ### On Mac OS (for Python 2)
 
-1. Install Anaconda2.7 
-https://repo.continuum.io/archive/
+1. Install Anaconda2.7 from: https://repo.continuum.io/archive/
 
-2. Install pyserial dependency
-```
-conda install -c conda-forge pyserial
-```
-3. Install bitalino API
+2. Install PySerial dependency
+    ```bash
+    conda install -c conda-forge pyserial
+    ```  
+    
+3. Install the BITalino API
+    ```
+    pip install bitalino
+    ```
 
-```
-pip install bitalino
-```
-
-4. Test LightsBIT.py (e.g. with a jupyter notebook test file) 
-
-Should see the led turning on or off
+4. Test `LightsBIT.py` (e.g. with a Jupyter notebook test file); you should see the LED actuator turning ON or OFF
 
 
