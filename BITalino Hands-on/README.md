@@ -42,6 +42,7 @@ http://bitalino.com/en/software
 
 ![IMAGE ALT TEXT](images/BITalino_cut.jpg)
 
+
 ![bar](images/bitalinobar.jpg)
 ## 1. Acquisition <a name="acq"></a>
 
@@ -72,6 +73,7 @@ Once your BITalino is turned on, pair the device with your computer via the Blue
     - [Event Annotation (BTN)](http://bitalino.com/datasheets/REVOLUTION_BTN_Sensor_Datasheet.pdf) 
 
 - **Record a signal** by pressing the red circle on the main menu of the software  
+
 
 ![IMAGE ALT TEXT](images/opensig.jpg)
 ![bar](images/bitalinobar.jpg)
@@ -121,6 +123,7 @@ plot(data)
 
 plot(proc_data)
 ```
+
 
 ![bar](images/bitalinobar.jpg)
 ## 4. Measure and Actuate with BITalino (Asynchronous) <a name="measure"></a>
@@ -214,7 +217,7 @@ This particular example computes the EMG signal envelope in real-time and turns 
 
 A detailed version notebook of this script can be seen at [MuscleBIT_steps.ipynb](detailed/MuscleBIT_steps.ipynb).
 
-**IMPORTANT NOTE:** This is a time-critical operation and BITalino has a small internal buffer to accumulate samples (roughly less than 2 seconds), reason for which if the time in-between calls to the `read` method is much higher than the rate at which the device is streaming data (e.g. due to the time taken by calculations) the internal buffer will fill and device will stop streaming data. An crucial component in this process is the amount of samples acquired from the deavice at a time; for more information please refer to: http://forum.bitalino.com/viewtopic.php?t=129#p227
+**IMPORTANT NOTE:** This is a time-critical operation and BITalino has a small internal buffer to accumulate samples (roughly less than 2 seconds), reason for which if the time in-between calls to the `read` method is much higher than the rate at which the device is streaming data (e.g. due to the time taken by calculations) the internal buffer will fill and the device will stop streaming data. An crucial component in this process is the amount of samples acquired from the device at a time; for additional information please refer to: http://forum.bitalino.com/viewtopic.php?t=129#p227
 
 ```python
 import bitalino
@@ -259,14 +262,51 @@ finally:
     device.close()
 ```
 
+
 ![bar](images/bitalinobar.jpg)
 ## 6. Live on the Web Browser <a name="browser"></a>
-Demo of serverbit + web browser
 
-BITalino revolution ServerBIT is a utility that helps you stream your signals in real time on a webbrowser (ClientBIT.html)
-https://github.com/BITalinoWorld/revolution-python-serverbit
+Struggling with data acquisition in Python?! We've handled part of the heavy load for you, by creating [ServerBIT](https://github.com/BITalinoWorld/revolution-python-serverbit), an easy-to-install software bundle that runs in a service-like manner, continuously streaming data from the device to third-party applications (e.g. your web browser).
 
-Once installed, run BITalino ServerBIT and open your ClientBIT.html. MAC address and channels can be configured through the **config.json** that is created under your home user folder. 
+Once installed, you need to configure the MAC address and channels to be acquired through the `config.json` by following the instructions described here:  
+https://github.com/BITalinoWorld/revolution-python-serverbit#pre-configured-installers
+
+ServerBIT runs in a resilient automated manner, meaning that once it is launched it will automatically attempt to connect to your configured device and even if the device is not turned on or the connection is lost, it will periodically attempt to reconnect and resume the data streaming process. 
+
+Data is streamed using [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) technology, helping you receive the data stream even in a web browser. The [ClientBIT.html](https://github.com/BITalinoWorld/revolution-python-serverbit/blob/master/ClientBIT.html) sample code (shown bellow)
+
+```javascript
+<html>
+    <script language="javascript" type="text/javascript" src="jquery.js"></script> 
+    <script language="javascript" type="text/javascript" src="jquery.flot.js"></script> 
+    <script type="text/javascript">
+        // Establish a connection to the ServerBIT
+        var ws = new WebSocket("ws://localhost:9001/");
+        ws.onopen = function() {
+        };
+        // Process the responses sent by the ServerBIT
+        ws.onmessage = function (e) {
+            data = JSON.parse(e.data)
+            var d1 = [];
+            ch = 'A1'
+            for (var i = 0; i < data[ch].length; i += 1)
+                d1.push([i, data[ch][i]]);
+            $.plot($("#placeholder"), [ d1 ], {yaxis: {min:0, max: 1024}});
+        };
+        // Detect when the page is unloaded or close
+        window.onbeforeunload = function() {
+            ws.onclose = function () {};
+            ws.close()
+        };        
+        
+    </script>
+    <body>
+        <div><h1>BITalinoWS</h1></div>
+	<div id="placeholder" style="width:600px;height:300px;"></div> 
+    </body>
+</html>
+```
+
 
 Open ClienBIT.html with a browser and watch your signals in real time. Graphics are processed by **FLOT**. Feel free to source the web and inspect the codes to get the best data presentation features.
 http://www.flotcharts.org/flot/examples/basic-options/index.html
