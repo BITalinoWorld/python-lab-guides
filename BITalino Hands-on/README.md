@@ -1,5 +1,5 @@
 ![Header](images/bitalinoheader.jpg)
-*BITalino python lab guide based on a presentation created by Hugo Silva. 
+*BITalino Python lab guide based on the workshop materials created by Hugo Silva. 
 Adapted by Miquel Alfaras and Hugo Gamboa.*
 
 * [0 Setting up](#settingup)
@@ -14,13 +14,16 @@ Adapted by Miquel Alfaras and Hugo Gamboa.*
 
 ![bar](images/bitalinobar.jpg)
 ##  0 Setting up <a name="settingup"></a>
-- Install the Anaconda Python distribution that best suits your platform:  
+- Install the Anaconda Python distribution that best suits your platform (Python 2.7 is recommended):  
  https://www.anaconda.com/download/
 
-- Install BITalino's serverBIT (r)evolution:    
+- Install the BITalino Python API (recommended):
+https://github.com/BITalinoWorld/revolution-python-api
+
+- Install BITalino's ServerBIT (r)evolution:    
 https://github.com/BITalinoWorld/revolution-python-serverbit
 
-- Install openSignals (r)evolution Software:  
+- Install OpenSignals (r)evolution Software:  
 http://bitalino.com/en/software
 
 - Get a good code editor:  
@@ -29,25 +32,29 @@ http://bitalino.com/en/software
 
     - **Pycharm** https://www.jetbrains.com/pycharm/  
 
-- Enjoy executing some code:  
-Launch a jupyter notebook
+- Enjoy executing some code (e.g. by launching a Jupyter notebook)
 
-
-- Architecture of **bitalino** 
-[BITalino datasheet](http://bitalino.com/datasheets/REVOLUTION_BITalino_Board_Kit_Datasheet.pdf).
+- Architecture of **BITalino** 
+([datasheet](http://bitalino.com/datasheets/REVOLUTION_BITalino_Board_Kit_Datasheet.pdf)).
 
 ![IMAGE ALT TEXT](images/BITalino_cut.jpg)
 
 ![bar](images/bitalinobar.jpg)
 ## 1 Acquisition <a name="acq"></a>
 
-Once your BITalino is turned on, make sure the device is paired by the Bluetooth connection that you will use to receive the data.  You will match your device given the MAC address that is written in the back label. 
+Prepare your device by connecting the battery (i.e. slide the battery connector onto the white socket on the BITalino PWR block) and turn it on by sliding the power button to the ON position. A white LED will start fading in / out, meaning that the device is in standby.
 
-Default PIN is **1234**.
+Once your BITalino is turned on, pair the device with your computer via the Bluetooth device manager using the PIN **1234** (this is a one-time process). Your device will be named "BITalino-XX-XX", with "XX-XX" being the last four hex digits of your devices' MAC address.
 
-- Open **OpenSignals** and proceed to configure your acquisition (sensors, channels, type of data, sampling rate). 
+**IMPORTANT NOTE:** The MAC address is the sequence XX:XX:XX:XX:XX:XX found on the label on the back of the devices' BT block or on the back of the cardboard packaging where the device is shipped.
 
-- Test sensor acquisition. It is important that you check sensor Datasheets to find out about the correct electrode placement, specs and formulas used for transfer functions:
+- Launch **OpenSignals (r)evolution**.
+
+- Enable your device for acquisition by pressing the magnifying glass icon on the main screen and clicking the box showing the MAC address of your device (this is a one-time process). **IMPORTANT NOTE:** The ENABLE button needs to be blue.
+
+- You can proceed directly to record data, but you can also use this screen to configure the acquisition settings for your device (e.g. select the channels to be acquired, identify the type of sensor or change the sampling rate). 
+
+- It is recommended that you review the sensor datasheets, to obtain instructions regarding the typical electrode placement, sensor specifications and the transfer functions that can be used to convert the raw data into the correct physical units:
     1. [How to acquire EMG](http://bitalino.com/datasheets/REVOLUTION_EMG_Sensor_Datasheet.pdf) 
 
     2. [How to acquire EDA](http://bitalino.com/datasheets/REVOLUTION_EDA_Sensor_Datasheet.pdf) 
@@ -67,7 +74,7 @@ Default PIN is **1234**.
 
     7. [How to acquire BTN](http://bitalino.com/datasheets/BTN_Sensor_Datasheet.pdf) 
 
-- **Record a signal**
+- **Record a signal** by pressing the red circle on the main menu of the software.
 
 ![IMAGE ALT TEXT](images/opensig.jpg)
 ![bar](images/bitalinobar.jpg)
