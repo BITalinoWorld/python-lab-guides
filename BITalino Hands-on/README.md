@@ -106,7 +106,7 @@ from numpy import *
 from scipy import signal
 
 def lowpass(s, f, order=2, fs=1000.0):
-    b, a = signal.butter(order, f / (fs/2.))
+    b, a = signal.butter(order, f / (fs/2))
     return signal.lfilter(b, a, s)
 
 data = loadtxt("SampleEMG.txt")
@@ -131,15 +131,20 @@ The BITalino MCU supports multiple operation modes (detailed in the [datasheet](
 http://bitalino.com/pyAPI/
 
 The example [LightsBIT.py](LightsBIT.py) (shown bellow) demonstrates how to read and change the [state](http://bitalino.com/pyAPI/#bitalino.BITalino.state) of the device. Whenever the program is executed, the LED actuator and the low battery indicator LED will turn ON if they were turned off and turn OFF otherwise, printing its state on screen.
+
+To control the LED actuator, the [trigger](http://bitalino.com/pyAPI/#bitalino.BITalino.trigger) method is used, while the [battery](http://bitalino.com/pyAPI/#bitalino.BITalino.battery) method is used to obtain and change the low battery level threshold in such a way that the LED turns on or off.
+
+**IMPORTANT NOTE:** You need to adapt the code so that the `macAddress` variable has the correct value for your operating system and device MAC address.
+
 ```python
 import bitalino
 import numpy
 
 # Mac OS
-macAddress = "/dev/tty.BITalino-01-93-DevB"
+# macAddress = "/dev/tty.BITalino-XX-XX-DevB"
 
 # Windows
-# macAddress = "XX:XX:XX:XX:XX:XX"
+macAddress = "XX:XX:XX:XX:XX:XX"
  
 device = bitalino.BITalino(macAddress)
 
