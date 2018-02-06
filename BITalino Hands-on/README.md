@@ -45,17 +45,17 @@ http://bitalino.com/en/software
 ![bar](images/bitalinobar.jpg)
 ## 1. Acquisition <a name="acq"></a>
 
-Once your BITalino is turned on, pair the device with your computer via the Bluetooth device manager using the PIN **1234** (this is a one-time process). Your device will be named "BITalino-XX-XX", with "XX-XX" being the last four hex digits of your devices' MAC address.
+Once your BITalino is turned on, pair the device with your computer via the Bluetooth device manager using the PIN **1234** (this is a one-time process). Your device will be named `BITalino-XX-XX`, with `XX-XX` being the last four hex digits of your devices' MAC address.
 
-**IMPORTANT NOTE:** The MAC address is the sequence XX:XX:XX:XX:XX:XX found on the label on the back of the devices' BT block or on the back of the cardboard packaging where the device is shipped.
+**IMPORTANT NOTE:** The MAC address is the sequence `XX:XX:XX:XX:XX:XX` found on the label on the back of the devices' BT block or on the back of the cardboard packaging where the device is shipped.
 
 - Launch **OpenSignals (r)evolution**
 
-- Enable your device for acquisition by pressing the magnifying glass icon on the main screen and clicking the box showing the MAC address of your device (this is a one-time process); **IMPORTANT NOTE:** The ENABLE button needs to be blue
+- Enable your device for acquisition by pressing the magnifying glass icon on the main screen and clicking the box showing the MAC address of your device (this is a one-time process); **IMPORTANT NOTE:** The ENABLE button needs to be blue  
 
-- You can proceed directly to record data, but you can also use this screen to configure the acquisition settings for your device (e.g. select the channels to be acquired, identify the type of sensor or change the sampling rate). 
+- You can proceed directly to record data, but you can also use this screen to configure the acquisition settings for your device (e.g. select the channels to be acquired, identify the type of sensor or change the sampling rate)  
 
-- It is recommended that you review the sensor datasheets, to obtain instructions regarding the typical electrode placement, sensor specifications and the transfer functions that can be used to convert the raw data into the correct physical units:
+- It is recommended that you review the sensor datasheets to obtain instructions regarding the typical electrode placement, sensor specifications and the transfer functions that can be used to convert the raw data into the correct physical units:
     - [Electromyography (EMG)](http://bitalino.com/datasheets/REVOLUTION_EMG_Sensor_Datasheet.pdf) 
 
     - [Electrodermal Activity (EDA)](http://bitalino.com/datasheets/REVOLUTION_EDA_Sensor_Datasheet.pdf) 
@@ -70,15 +70,15 @@ Once your BITalino is turned on, pair the device with your computer via the Blue
 
     - [Event Annotation (BTN)](http://bitalino.com/datasheets/REVOLUTION_BTN_Sensor_Datasheet.pdf) 
 
-- **Record a signal** by pressing the red circle on the main menu of the software.
+- **Record a signal** by pressing the red circle on the main menu of the software  
 
 ![IMAGE ALT TEXT](images/opensig.jpg)
 ![bar](images/bitalinobar.jpg)
 ## 2. Opening Recorded Data in Python <a name="opensignal"></a>
 
-Proceed to opening a signal data file sample [SampleEMG.txt](SampleEMG.txt).
+Locate a recording on your hard drive; for your convenience, we provide the [SampleEMG.txt](SampleEMG.txt) file with a snippet of Electromyography (EMG) data.
 
-You can use the python script [LoadFile.py](LoadFile.py). This code uses pylab tools to import an EMG signal sample:
+You can make a simple experiment using the Python script [LoadFile.py](LoadFile.py); this code uses the function `loadtxt` (in this case made available through the `PyLab` module) to load the recorded data onto a variable in your program:
 ```
 %matplotlib inline
 from pylab import *
