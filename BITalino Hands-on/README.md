@@ -340,35 +340,33 @@ The `ClientBIT.html` user interface is implemented using open technologies, name
 
 ### On Windows (for Python 3)
 
-1. Install Anaconda3-4.2.0 (most recent with Python 3.5) according to your system 
-https://repo.continuum.io/archive/
+1. Install Anaconda3-4.2.0 (most recent with Python 3.5) according to your system from: 
+    https://repo.continuum.io/archive/
 
 2. Install dependencies
-  ```bash
-  pip install pyserial
-  ```
+    ```bash
+    pip install pyserial
+    ```
 
 3. Download and install old PyBluez (3.5) package wheel for the user platform (e.g. WinX64), not available from PyBluez PyPi resources
 https://www.lfd.uci.edu/~gohlke/pythonlibs/#pybluez
 PyBluez‑0.22‑cp35‑none‑win_amd64.whl
-   ```bash
-   pip install PyBluez-0.22-cp35-none-win_amd64.whl
-   ```
+    ```bash
+    pip install PyBluez-0.22-cp35-none-win_amd64.whl
+    ```
 
 4. Create a folder called `revolution-python-api`
 
-5. Download af12066 BITalino patch .zip and extract py files into the created folder called revolution-python-api
-  https://github.com/BITalinoWorld/revolution-python-api/archive/master.zip
+5. Download the BITalino API `.zip` and extract the files into the created folder called `revolution-python-api`
+    https://github.com/BITalinoWorld/revolution-python-api/archive/master.zip
 
-6. Test `bitalino.py` (e.g. with a Jupyter notebook test file) 
-
-Should see data collected by BITalino printed on the console
+6. Test `bitalino.py` (e.g. with a Jupyter notebook test file); you should see data collected by BITalino printed on the console
 
 
 ### On Windows (for Python 2)
 
 1. Install Anaconda 2.7 version 
-  https://repo.continuum.io/archive/
+    https://repo.continuum.io/archive/
 
 2. Install dependencies
     ```bash
