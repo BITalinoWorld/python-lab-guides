@@ -134,6 +134,8 @@ The example [LightsBIT.py](LightsBIT.py) (shown bellow) demonstrates how to read
 
 To control the LED actuator, the [trigger](http://bitalino.com/pyAPI/#bitalino.BITalino.trigger) method is used, while the [battery](http://bitalino.com/pyAPI/#bitalino.BITalino.battery) method is used to obtain and change the low battery level threshold in such a way that the LED turns on or off.
 
+A detailed notebook version of this script is avaialble at [LightsBIT_steps.ipynb](detailed/LightsBIT_steps.ipynb)
+
 **IMPORTANT NOTE:** You need to adapt the code so that the `macAddress` variable has the correct value for your operating system and device MAC address.
 
 ```python
@@ -160,18 +162,22 @@ print ("LIGHTS ON") if toggle else ("LIGHTS OFF")
 
 device.close()
 ```
-A detailed version notebook of this script can be seen at [LightsBIT_steps.ipynb](detailed/LightsBIT_steps.ipynb)
 
+In the previous example, only when the program is executed an action is produced. Combining the same principles with a repetition structure introduces us to a more interactive behaviour.
 
-ButtonBIT script launches a continuous the acquisition of BITalino button state. Depending on whether you press or not the button, LED light will turn ON and OFF accordingly. 
-[ButtonBIT.py](ButtonBIT.py):
-```
+This is illustrated on our [ButtonBIT.py](ButtonBIT.py) example (shown bellow), where a loop continuously checks the [state](http://bitalino.com/pyAPI/#bitalino.BITalino.state) of the device and turns the LED actuator and low battery LED ON or OFF based on the state of the Pushbutton (BTN) sensor.
+
+By default, the BTN sensor is connected to the BITalino digital input I1 (hence the fetching of `state['digitalChannels'][0]`), and depending on whether the button is pressed, the abovementioned LEDs will turn ON or OFF accordingly.
+
+A detailed version notebook of this script can be seen at [ButtonBIT_steps.ipynb](detailed/ButtonBIT_steps.ipynb)
+![bar](images/bitalinobar.jpg)
+
+```python 
 import bitalino
-
 import numpy
 
 # Mac OS
-macAddress = "/dev/tty.BITalino-01-93-DevB"
+macAddress = "/dev/tty.BITalino-XX-XX-DevB"
 
 # Windows
 # macAddress = "XX:XX:XX:XX:XX:XX"
@@ -192,8 +198,7 @@ while True:
 device.close()
 
 ```
-A detailed version notebook of this script can be seen at [ButtonBIT_steps.ipynb](detailed/ButtonBIT_steps.ipynb)
-![bar](images/bitalinobar.jpg)
+
 
 ## 5. Real-Time Signal Processing <a name="online"></a>
 This script detects an EMG signal envelope and turns the buzzer ON in case a certain threshold is exceeded. [MuscleBIT.py](MuscleBIT.py):
