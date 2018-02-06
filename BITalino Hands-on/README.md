@@ -46,7 +46,7 @@ http://bitalino.com/en/software
 ![bar](images/bitalinobar.jpg)
 ## 1. Acquisition <a name="acq"></a>
 
-Once your BITalino is turned on, pair the device with your computer via the Bluetooth device manager using the PIN **1234** (this is a one-time process). Your device will be named `BITalino-XX-XX`, with `XX-XX` being the last four hex digits of your devices' MAC address.
+Once your BITalino is turned on, pair the device with your computer via the Bluetooth device manager using the PIN `1234` (this is a one-time process). Your device will be named `BITalino-XX-XX`, with `XX-XX` being the last four hex digits of your devices' MAC address.
 
 **IMPORTANT NOTE:** The MAC address is the sequence `XX:XX:XX:XX:XX:XX` found on the label on the back of the devices' BT block or on the back of the cardboard packaging where the device is shipped.
 
@@ -81,7 +81,7 @@ Once your BITalino is turned on, pair the device with your computer via the Blue
 
 Locate a recording on your hard drive; for your convenience, we provide the [SampleEMG.txt](SampleEMG.txt) file with a snippet of Electromyography (EMG) data.
 
-You can make a simple experiment using the Python script [LoadFile.py](LoadFile.py); this code uses the function `loadtxt` (in this case made available through the `PyLab` module), to load the recorded data onto a variable in your program and display it in a graphic:
+You can make a simple experiment using the Python script [LoadFile.py](LoadFile.py); this code uses the function [loadtxt](https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.loadtxt.html) (in this case made available through the `PyLab` module), to load the recorded data onto a variable in your program and display it in a graphic:
 ```python
 from pylab import *
 
@@ -92,7 +92,7 @@ plot(data[:,5])
 
 Use this code in Spyder or in a Jupyter notebook (a detailed notebook version of this script can be seen at [LoadFile_steps.ipynb](detailed/LoadFile_steps.ipynb)).
 
-**IMPORTANT NOTE:** In the `SampleEMG.txt` file, EMG data was recorded using the BITalino analog input A1, which corresponds to column 6 of the file; given that Python uses zero-based numbering for indexing, the data matrix is being sliced in column 5 (i.e. `data[:,5]`). Further information about the content of the files recorded using OpenSignals (r)evolution can be found at: http://forum.bitalino.com/viewtopic.php?f=15&t=481&p=1553#p1553  
+**IMPORTANT NOTE:** In the `SampleEMG.txt` file, EMG data was recorded using the BITalino analog input `A1`, which corresponds to column `6` of the file; given that Python uses zero-based numbering for indexing, the data matrix is being sliced in column `5` (i.e. `data[:,5]`). Further information about the content of the files recorded using OpenSignals (r)evolution can be found at: http://forum.bitalino.com/viewtopic.php?f=15&t=481&p=1553#p1553  
 
 
 ![bar](images/bitalinobar.jpg)
@@ -170,7 +170,7 @@ In the previous example, only when the program is executed an action is produced
 
 This is illustrated on our [ButtonBIT.py](ButtonBIT.py) example (shown bellow), where a loop continuously checks the [state](http://bitalino.com/pyAPI/#bitalino.BITalino.state) of the device and turns the LED actuator and low battery LED ON or OFF based on the state of the Pushbutton (BTN) sensor.
 
-By default, the BTN sensor is connected to the BITalino digital input I1 (hence the fetching of `state['digitalChannels'][0]`), and depending on whether the button is pressed, the abovementioned LEDs will turn ON or OFF accordingly.
+By default, the BTN sensor is connected to the BITalino digital input `I1` (hence the fetching of `state['digitalChannels'][0]`), and depending on whether the button is pressed, the abovementioned LEDs will turn ON or OFF accordingly.
 
 A detailed version notebook of this script can be seen at [ButtonBIT_steps.ipynb](detailed/ButtonBIT_steps.ipynb)
 
@@ -271,9 +271,14 @@ Struggling with data acquisition in Python?! We've handled part of the heavy loa
 Once installed, you need to configure the MAC address and channels to be acquired through the `config.json` by following the instructions described here:  
 https://github.com/BITalinoWorld/revolution-python-serverbit#pre-configured-installers
 
-ServerBIT runs in a resilient automated manner, meaning that once it is launched it will automatically attempt to connect to your configured device and even if the device is not turned on or the connection is lost, it will periodically attempt to reconnect and resume the data streaming process. 
+ServerBIT runs in a resilient manner, meaning that once it is launched it will automatically attempt to connect to your configured device and even if the device is not turned on or the connection is lost, it will periodically attempt to reconnect and resume the data streaming process. 
 
-Data is streamed using [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) technology, helping you receive the data stream even in a web browser. The [ClientBIT.html](https://github.com/BITalinoWorld/revolution-python-serverbit/blob/master/ClientBIT.html) sample code (shown bellow)
+Data is streamed using [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) technology, helping you receive the data stream even in a web browser. 
+
+With the ServerBIT running, is you open the [ClientBIT.html](https://github.com/BITalinoWorld/revolution-python-serverbit/blob/master/ClientBIT.html) sample web page (source code shown bellow) will display the signals from the sensor connected to channel `A1` in real time. 
+
+Graphics are processed by **FLOT**. Feel free to source the web and inspect the codes to get the best data presentation features.
+http://www.flotcharts.org/flot/examples/basic-options/index.html
 
 ```html
 <html>
@@ -307,9 +312,6 @@ Data is streamed using [WebSockets](https://developer.mozilla.org/en-US/docs/Web
 </html>
 ```
 
-
-Open ClienBIT.html with a browser and watch your signals in real time. Graphics are processed by **FLOT**. Feel free to source the web and inspect the codes to get the best data presentation features.
-http://www.flotcharts.org/flot/examples/basic-options/index.html
 
 ![bar](images/bitalinobar.jpg)
 ## 7. External Links <a name="external"></a>
