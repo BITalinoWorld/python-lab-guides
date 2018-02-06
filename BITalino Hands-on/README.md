@@ -132,8 +132,8 @@ Until now we've seen how to work with data recorded using OpenSignals (r)evoluti
 The BITalino MCU supports multiple operation modes (detailed in the [datasheet](http://bitalino.com/datasheets/REVOLUTION_MCU_Block_Datasheet.pdf)), which are conveniently exposed through user-friendly high-level methods provided on the [APIs](http://bitalino.com/en/development/apis). Our experiments will use the [Python API](https://github.com/BITalinoWorld/revolution-python-api), for which documentation is available here:
 http://bitalino.com/pyAPI/
 
-The example [LightsBIT.py](LightsBIT.py) (shown bellow) demonstrates how to read and change the [state](http://bitalino.com/pyAPI/#bitalino.BITalino.state) of the device. Whenever the program is executed, the LED actuator and the battery level indicator will turn ON if they were turned off and turn OFF otherwise, printing its state on screen.
-```
+The example [LightsBIT.py](LightsBIT.py) (shown bellow) demonstrates how to read and change the [state](http://bitalino.com/pyAPI/#bitalino.BITalino.state) of the device. Whenever the program is executed, the LED actuator and the low battery indicator LED will turn ON if they were turned off and turn OFF otherwise, printing its state on screen.
+```python
 import bitalino
 
 import numpy
