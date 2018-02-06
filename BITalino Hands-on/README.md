@@ -30,27 +30,26 @@ http://bitalino.com/en/software
 
     - **Spyder** is already included with Anaconda *or*
 
-    - **Pycharm** https://www.jetbrains.com/pycharm/  
+    - **PyCharm** https://www.jetbrains.com/pycharm/  
 
 - Enjoy executing some code (e.g. by launching a Jupyter notebook)
 
-- Architecture of **BITalino** 
-([datasheet](http://bitalino.com/datasheets/REVOLUTION_BITalino_Board_Kit_Datasheet.pdf)).
+- Prepare your device by connecting the battery (i.e. slide the battery connector onto the white socket on the BITalino PWR block) and turn it on by sliding the power button to the ON position. A white LED will start fading in / out, meaning that the device is in standby
+
+- Get familiar with the architecture of **BITalino** ([datasheet](http://bitalino.com/datasheets/REVOLUTION_BITalino_Board_Kit_Datasheet.pdf)).
 
 ![IMAGE ALT TEXT](images/BITalino_cut.jpg)
 
 ![bar](images/bitalinobar.jpg)
 ## 1 Acquisition <a name="acq"></a>
 
-Prepare your device by connecting the battery (i.e. slide the battery connector onto the white socket on the BITalino PWR block) and turn it on by sliding the power button to the ON position. A white LED will start fading in / out, meaning that the device is in standby.
-
 Once your BITalino is turned on, pair the device with your computer via the Bluetooth device manager using the PIN **1234** (this is a one-time process). Your device will be named "BITalino-XX-XX", with "XX-XX" being the last four hex digits of your devices' MAC address.
 
 **IMPORTANT NOTE:** The MAC address is the sequence XX:XX:XX:XX:XX:XX found on the label on the back of the devices' BT block or on the back of the cardboard packaging where the device is shipped.
 
-- Launch **OpenSignals (r)evolution**.
+- Launch **OpenSignals (r)evolution**
 
-- Enable your device for acquisition by pressing the magnifying glass icon on the main screen and clicking the box showing the MAC address of your device (this is a one-time process). **IMPORTANT NOTE:** The ENABLE button needs to be blue.
+- Enable your device for acquisition by pressing the magnifying glass icon on the main screen and clicking the box showing the MAC address of your device (this is a one-time process); **IMPORTANT NOTE:** The ENABLE button needs to be blue
 
 - You can proceed directly to record data, but you can also use this screen to configure the acquisition settings for your device (e.g. select the channels to be acquired, identify the type of sensor or change the sampling rate). 
 
