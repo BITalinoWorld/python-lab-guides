@@ -2,18 +2,18 @@
 *BITalino Python lab guide based on the workshop materials created by Hugo Silva. 
 Adapted by Miquel Alfaras and Hugo Gamboa.*
 
-* [0 Setting up](#settingup)
-* [1 Acquisition](#acq)
-* [2 Open a signal in python](#opensignal)
-* [3 Process a signal](#process)
-* [4 Measure and actuate with BITalino](#measure)
-* [5 Online processing of signals](#online)
-* [6 Live on the Webbrowser](#browser)
-* [7 External links](#external)
+* [0. Setting up](#settingup)
+* [1. Acquisition](#acq)
+* [2. Opening Recorded Data in Python](#opensignal)
+* [3. Post-Processing a Signal](#process)
+* [4. Measure and Actuate with BITalino](#measure)
+* [5. Real-Time Signal Processing](#online)
+* [6. Live on the Web Browser](#browser)
+* [7. External Links](#external)
 
 
 ![bar](images/bitalinobar.jpg)
-##  0 Setting up <a name="settingup"></a>
+##  0. Setting up <a name="settingup"></a>
 - Install the Anaconda Python distribution that best suits your platform (Python 2.7 is recommended):  
  https://www.anaconda.com/download/
 
@@ -36,14 +36,14 @@ http://bitalino.com/en/software
 
 - Prepare your device by connecting the battery (i.e. slide the battery connector onto the white socket on the BITalino PWR block) 
 
-- Turn your device on by sliding the power button to the ON position (a white LED will start fading in / out, meaning that the device is in standby)
+- Turn your device on by sliding the power button to the ON position; a white LED will start fading in / out, meaning that the device is in standby
 
 - Get familiar with the architecture of **BITalino** ([datasheet](http://bitalino.com/datasheets/REVOLUTION_BITalino_Board_Kit_Datasheet.pdf)).
 
 ![IMAGE ALT TEXT](images/BITalino_cut.jpg)
 
 ![bar](images/bitalinobar.jpg)
-## 1 Acquisition <a name="acq"></a>
+## 1. Acquisition <a name="acq"></a>
 
 Once your BITalino is turned on, pair the device with your computer via the Bluetooth device manager using the PIN **1234** (this is a one-time process). Your device will be named "BITalino-XX-XX", with "XX-XX" being the last four hex digits of your devices' MAC address.
 
@@ -79,7 +79,7 @@ Once your BITalino is turned on, pair the device with your computer via the Blue
 
 ![IMAGE ALT TEXT](images/opensig.jpg)
 ![bar](images/bitalinobar.jpg)
-## 2 Open a signal in python <a name="opensignal"></a>
+## 2. Opening Recorded Data in Python <a name="opensignal"></a>
 
 Proceed to opening a signal data file sample [SampleEMG.txt](SampleEMG.txt).
 
@@ -96,7 +96,7 @@ plot(data[:,5])
 Use this code in spyder or in a Jupyter notebook.
 A detailed version notebook of this script can be seen at [LoadFile_steps.ipynb](detailed/LoadFile_steps.ipynb)
 ![bar](images/bitalinobar.jpg)
-## 3 Process a signal <a name="process"></a>
+## 3. Post-Processing a Signal <a name="process"></a>
 
 Based on the previous code, process the EMG signal to compute the envelope of the EMG (smooth the abs of the signal after removing the mean)
 
@@ -124,7 +124,7 @@ plot(proc_data)
 ```
 
 ![bar](images/bitalinobar.jpg)
-## 4 Measure and actuate with BITalino (asynchronous) <a name="measure"></a>
+## 4. Measure and Actuate with BITalino (Asynchronous) <a name="measure"></a>
 This script allows switching ON and OFF the BITalino LED light, printing its state on screen.
 [LightsBIT.py](LightsBIT.py):
 ```
@@ -187,7 +187,7 @@ device.close()
 A detailed version notebook of this script can be seen at [ButtonBIT_steps.ipynb](detailed/ButtonBIT_steps.ipynb)
 ![bar](images/bitalinobar.jpg)
 
-## 5 Online processing of signals <a name="online"></a>
+## 5. Real-Time Signal Processing <a name="online"></a>
 This script detects an EMG signal envelope and turns the buzzer ON in case a certain threshold is exceeded. [MuscleBIT.py](MuscleBIT.py):
 ```
 import bitalino
@@ -235,7 +235,7 @@ finally:
 A detailed version notebook of this script can be seen at [MuscleBIT_steps.ipynb](detailed/MuscleBIT_steps.ipynb)
 
 ![bar](images/bitalinobar.jpg)
-## 6 Live on the Web browser <a name="browser"></a>
+## 6. Live on the Web Browser <a name="browser"></a>
 Demo of serverbit + web browser
 
 BITalino revolution ServerBIT is a utility that helps you stream your signals in real time on a webbrowser (ClientBIT.html)
@@ -247,7 +247,7 @@ Open ClienBIT.html with a browser and watch your signals in real time. Graphics 
 http://www.flotcharts.org/flot/examples/basic-options/index.html
 
 ![bar](images/bitalinobar.jpg)
-## 7 External links <a name="external"></a>
+## 7. External Links <a name="external"></a>
 BITalino Forum: http://forum.bitalino.com/
 
 BITalino APIs: http://bitalino.com/en/development/apis
