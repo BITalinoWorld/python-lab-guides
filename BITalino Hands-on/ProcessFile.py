@@ -12,7 +12,7 @@ emg_data = data[:,5]
 
 abs_data = abs(data)
 
-proc_data = lowpass(abs_data, 10) #Filter with a lowpass filter at 10Hz
+proc_data = lowpass(abs_data, 10) # filter with a lowpass filter at 10Hz
 
 plot(data)
 
