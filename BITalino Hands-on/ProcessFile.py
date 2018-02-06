@@ -6,7 +6,9 @@ def lowpass(s, f, order=2, fs=1000.0):
     b, a = signal.butter(order, f / (fs/2))
     return signal.lfilter(b, a, s)
 
-data = loadtxt("SampleEMG.txt")[:,5]
+data = loadtxt("SampleEMG.txt")
+
+emg_data = data[:,5]
 
 abs_data = abs(data)
 
