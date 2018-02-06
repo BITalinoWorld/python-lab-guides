@@ -9,7 +9,8 @@ Adapted by Miquel Alfaras and Hugo Gamboa.*
 [4. Measure and Actuate with BITalino](#measure)  
 [5. Real-Time Signal Processing](#online)  
 [6. Live on the Web Browser](#browser)  
-[7. External Links](#external)  
+[7. External Links](#external)
+[A. Installation Notes](#installationnotes)
 
 
 ![bar](images/bitalinobar.jpg)
@@ -329,11 +330,11 @@ The `ClientBIT.html` user interface is implemented using open technologies, name
 - BITalinoWorld channel on YouTube has a few nifty videos:  
   https://www.youtube.com/user/BITalinoWorld/videos
 
-- [PLUX] (https://www.plux.info) and [biosignalsplux](http://www.biosignalsplux.com/) have solutions that enable you to extend your research
+- [PLUX](https://www.plux.info) and [biosignalsplux](http://www.biosignalsplux.com/) have solutions that enable you to extend your research
 
 
 ![bar](images/bitalinobar.jpg)
-## Installation Notes 
+## 8. Installation Notes <a name="installationnotes"></a>
 
 
 ### On Windows (for Python 3)
@@ -342,7 +343,7 @@ The `ClientBIT.html` user interface is implemented using open technologies, name
 https://repo.continuum.io/archive/
 
 2. Install dependencies
-```
+```bash
 pip install pyserial
 ```
 
