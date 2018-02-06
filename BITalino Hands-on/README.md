@@ -17,7 +17,7 @@ Adapted by Miquel Alfaras and Hugo Gamboa.*
 - Install the Anaconda Python distribution that best suits your platform (Python 2.7 is recommended):  
  https://www.anaconda.com/download/
 
-- Install the BITalino Python API (recommended):
+- Install the BITalino Python API (recommended):  
 https://github.com/BITalinoWorld/revolution-python-api
 
 - Install BITalino's ServerBIT (r)evolution:    
@@ -34,7 +34,9 @@ http://bitalino.com/en/software
 
 - Enjoy executing some code (e.g. by launching a Jupyter notebook)
 
-- Prepare your device by connecting the battery (i.e. slide the battery connector onto the white socket on the BITalino PWR block) and turn it on by sliding the power button to the ON position. A white LED will start fading in / out, meaning that the device is in standby
+- Prepare your device by connecting the battery (i.e. slide the battery connector onto the white socket on the BITalino PWR block) 
+
+- Turn your device on by sliding the power button to the ON position (a white LED will start fading in / out, meaning that the device is in standby)
 
 - Get familiar with the architecture of **BITalino** ([datasheet](http://bitalino.com/datasheets/REVOLUTION_BITalino_Board_Kit_Datasheet.pdf)).
 
