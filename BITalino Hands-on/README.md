@@ -56,24 +56,19 @@ Once your BITalino is turned on, pair the device with your computer via the Blue
 - You can proceed directly to record data, but you can also use this screen to configure the acquisition settings for your device (e.g. select the channels to be acquired, identify the type of sensor or change the sampling rate). 
 
 - It is recommended that you review the sensor datasheets, to obtain instructions regarding the typical electrode placement, sensor specifications and the transfer functions that can be used to convert the raw data into the correct physical units:
-    1. [How to acquire EMG](http://bitalino.com/datasheets/REVOLUTION_EMG_Sensor_Datasheet.pdf) 
+    - [Electromyography (EMG)](http://bitalino.com/datasheets/REVOLUTION_EMG_Sensor_Datasheet.pdf) 
 
-    2. [How to acquire EDA](http://bitalino.com/datasheets/REVOLUTION_EDA_Sensor_Datasheet.pdf) 
+    - [Electrodermal Activity (EDA)](http://bitalino.com/datasheets/REVOLUTION_EDA_Sensor_Datasheet.pdf) 
 
+    - [Electrocardiography (ECG)](http://bitalino.com/datasheets/REVOLUTION_ECG_Sensor_Datasheet.pdf) 
 
-    3. [How to acquire ECG](http://bitalino.com/datasheets/REVOLUTION_ECG_Sensor_Datasheet.pdf) 
+    - [Electroencephalography (EEG)](http://bitalino.com/datasheets/EEG_Sensor_Datasheet.pdf) 
 
+    - [Accelerometry (ACC)](http://bitalino.com/datasheets/REVOLUTION_ACC_Sensor_Datasheet.pdf) 
 
-    4. [How to acquire EEG](http://bitalino.com/datasheets/EEG_Sensor_Datasheet.pdf) 
+    - [Optical Sensing (LUX)](http://bitalino.com/datasheets/REVOLUTION_LUX_Sensor_Datasheet.pdf) 
 
-
-    5. [How to acquire ACC](http://bitalino.com/datasheets/REVOLUTION_ACC_Sensor_Datasheet.pdf) 
-
-
-    6. [How to acquire LUX](http://bitalino.com/datasheets/LUX_Sensor_Datasheet.pdf) 
-
-
-    7. [How to acquire BTN](http://bitalino.com/datasheets/BTN_Sensor_Datasheet.pdf) 
+    - [Event Annotation (BTN)](http://bitalino.com/datasheets/REVOLUTION_BTN_Sensor_Datasheet.pdf) 
 
 - **Record a signal** by pressing the red circle on the main menu of the software.
 
