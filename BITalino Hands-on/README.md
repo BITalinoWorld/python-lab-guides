@@ -177,10 +177,10 @@ import bitalino
 import numpy
 
 # Mac OS
-macAddress = "/dev/tty.BITalino-XX-XX-DevB"
+# macAddress = "/dev/tty.BITalino-XX-XX-DevB"
 
 # Windows
-# macAddress = "XX:XX:XX:XX:XX:XX"
+macAddress = "XX:XX:XX:XX:XX:XX"
  
 device = bitalino.BITalino(macAddress)
 
@@ -201,18 +201,31 @@ device.close()
 
 
 ## 5. Real-Time Signal Processing <a name="online"></a>
-This script detects an EMG signal envelope and turns the buzzer ON in case a certain threshold is exceeded. [MuscleBIT.py](MuscleBIT.py):
-```
-import bitalino
 
+In the previous section we have seen how to asynchronously interface with BITalino from within a Python program. A big downside of asynchronous communication is the fact that the time in-between readings (i.e. sampling interval) is variable. 
+
+Although many informal applications can cope with this operation model, for digital signal processing and research use it is of utmost importance to have a known and accurate sampling interval. For this reason, BITalino provides an operation mode where data is streamed at a fixed sampling rate.
+
+Our [MuscleBIT.py](MuscleBIT.py) example (shown bellow) illustrates this operation mode. The streaming process is initiated by calling the [start](http://bitalino.com/pyAPI/#bitalino.BITalino.start) method, in which a sampling rate and set of channels to be acquired can be specified.
+
+Once the device starts streaming, it is fundamental that the program reads the samples sent by the device in a timely and continuous (or near-continuous) manner, otherwise it will stop streaming automatically. In our example, this is achieved by putting the [read](http://bitalino.com/pyAPI/#bitalino.BITalino.read) method inside a repetition structure.
+
+This particular example computes the EMG signal envelope in real-time and turns the Buzzer (BUZ) actuator ON in case a certain threshold is exceeded. Pressing the BTN sensor for a few seconds will stop the program. 
+
+A detailed version notebook of this script can be seen at [MuscleBIT_steps.ipynb](detailed/MuscleBIT_steps.ipynb).
+
+**IMPORTANT NOTE:** This is a time-critical operation and BITalino has a small internal buffer to accumulate samples (roughly less than 2 seconds), reason for which if the time in-between calls to the `read` method is much higher than the rate at which the device is streaming data (e.g. due to the time taken by calculations) the internal buffer will fill and device will stop streaming data. An crucial component in this process is the amount of samples acquired from the deavice at a time; for more information please refer to: http://forum.bitalino.com/viewtopic.php?t=129#p227
+
+```python
+import bitalino
 import numpy
 import time
 
 # Mac OS
-macAddress = "/dev/tty.BITalino-01-93-DevB"
+# macAddress = "/dev/tty.BITalino-XX-XX-DevB"
 
 # Windows
-# macAddress = "XX:XX:XX:XX:XX:XX"
+macAddress = "XX:XX:XX:XX:XX:XX"
    
 device = bitalino.BITalino(macAddress)
 time.sleep(1)
@@ -245,7 +258,6 @@ finally:
     device.stop()
     device.close()
 ```
-A detailed version notebook of this script can be seen at [MuscleBIT_steps.ipynb](detailed/MuscleBIT_steps.ipynb)
 
 ![bar](images/bitalinobar.jpg)
 ## 6. Live on the Web Browser <a name="browser"></a>
