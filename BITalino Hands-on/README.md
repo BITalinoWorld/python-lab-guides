@@ -11,7 +11,7 @@ Adapted by Miquel Alfaras and Hugo Gamboa.*
 [6. Live on the Web Browser](#browser)  
 [7. External Links](#external)  
   
-[A. Installation Notes](#installationnotes)
+[A. Installation Notes (Python)](#installationnotes)
 
 
 ![bar](images/bitalinobar.jpg)
