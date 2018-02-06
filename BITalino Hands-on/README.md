@@ -91,16 +91,16 @@ plot(data[:,5])
 
 Use this code in Spyder or in a Jupyter notebook (a detailed notebook version of this script can be seen at [LoadFile_steps.ipynb](detailed/LoadFile_steps.ipynb)).
 
-**IMPORTANT NOTE:** In the `SampleEMG.txt` file EMG data was recorded using the BITalino analog input A1, which corresponds to column 6 on file; given that Python using zero-based numbering for indexing the data matrix is being sliced in column 5 (i.e. `data[:,5]`). Information about the content of the files recorded using OpenSignals (r)evolution can be found at: http://forum.bitalino.com/viewtopic.php?f=15&t=481&p=1553#p1553  
+**IMPORTANT NOTE:** In the `SampleEMG.txt` file, EMG data was recorded using the BITalino analog input A1, which corresponds to column 6 of the file; given that Python uses zero-based numbering for indexing, the data matrix is being sliced in column 5 (i.e. `data[:,5]`). Further information about the content of the files recorded using OpenSignals (r)evolution can be found at: http://forum.bitalino.com/viewtopic.php?f=15&t=481&p=1553#p1553  
 
 
 ![bar](images/bitalinobar.jpg)
 ## 3. Post-Processing a Signal <a name="process"></a>
 
-Based on the previous code, process the EMG signal to compute the envelope of the EMG (smooth the abs of the signal after removing the mean)
+Based on the previous code, another experience you can do is to compute the envelope of the EMG signal (i.e. smooth the absolute of the signal after removing the mean).
 
-You can use python script [ProcessFile.py](ProcessFile.py). 
-This script loads an EMG signal sample in order to remove its baseline and apply a low-pass filter to it:
+To facilitate this task, you can use Python script [ProcessFile.py](ProcessFile.py), which loads an EMG signal sample in order to remove its baseline and apply a low-pass filter to it:
+
 ```
 %matplotlib inline
 from pylab import *
@@ -108,14 +108,16 @@ from numpy import *
 from scipy import signal
 
 def lowpass(s, f, order=2, fs=1000.0):
-    b, a = signal.butter(order, f / (fs/2))
+    b, a = signal.butter(order, f / (fs/2.))
     return signal.lfilter(b, a, s)
 
-data = loadtxt("SampleEMG.txt")[:,5]
+data = loadtxt("SampleEMG.txt")
+
+emg_data = data[:,5]
 
 abs_data = abs(data-mean(data))
 
-proc_data = lowpass(abs_data, 10) #Filter with a lowpass filter at 10Hz
+proc_data = lowpass(abs_data, 10) # filter with a lowpass filter at 10Hz
 
 plot(data)
 
@@ -124,6 +126,9 @@ plot(proc_data)
 
 ![bar](images/bitalinobar.jpg)
 ## 4. Measure and Actuate with BITalino (Asynchronous) <a name="measure"></a>
+
+So far we've seen how to work with data recorded using OpenSignals (r)evolution in post-processing tasks. However, it is also possible to interact with the device directly from your Python program.
+
 This script allows switching ON and OFF the BITalino LED light, printing its state on screen.
 [LightsBIT.py](LightsBIT.py):
 ```
