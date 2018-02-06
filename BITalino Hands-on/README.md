@@ -89,10 +89,9 @@ data = loadtxt("SampleEMG.txt")
 plot(data[:,5])
 ```
 
-Use this code in spyder or in a Jupyter notebook (a detailed notebook version of this script can be seen at [LoadFile_steps.ipynb](detailed/LoadFile_steps.ipynb)).
+Use this code in Spyder or in a Jupyter notebook (a detailed notebook version of this script can be seen at [LoadFile_steps.ipynb](detailed/LoadFile_steps.ipynb)).
 
-**IMPORTANT NOTE:** Information about the content of the files recorded using OpenSignals (r)evolution can be found at:  
-http://forum.bitalino.com/viewtopic.php?f=15&t=481&p=1553#p1553  
+**IMPORTANT NOTE:** In the `SampleEMG.txt` file EMG data was recorded using the BITalino analog input A1, which corresponds to column 6 on file; given that Python using zero-based numbering for indexing the data matrix is being sliced in column 5 (i.e. `data[:,5]`). Information about the content of the files recorded using OpenSignals (r)evolution can be found at: http://forum.bitalino.com/viewtopic.php?f=15&t=481&p=1553#p1553  
 
 
 ![bar](images/bitalinobar.jpg)
