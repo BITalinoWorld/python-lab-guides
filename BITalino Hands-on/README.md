@@ -79,9 +79,8 @@ Once your BITalino is turned on, pair the device with your computer via the Blue
 
 Locate a recording on your hard drive; for your convenience, we provide the [SampleEMG.txt](SampleEMG.txt) file with a snippet of Electromyography (EMG) data.
 
-You can make a simple experiment using the Python script [LoadFile.py](LoadFile.py); this code uses the function `loadtxt` (in this case made available through the `PyLab` module), to load the recorded data onto a variable in your program:
-```
-%matplotlib inline
+You can make a simple experiment using the Python script [LoadFile.py](LoadFile.py); this code uses the function `loadtxt` (in this case made available through the `PyLab` module), to load the recorded data onto a variable in your program and display it in a graphic:
+```python
 from pylab import *
 
 data = loadtxt("SampleEMG.txt")
@@ -101,8 +100,7 @@ Based on the previous code, another experience you can do is to compute the enve
 
 To facilitate this task, you can use Python script [ProcessFile.py](ProcessFile.py), which loads an EMG signal sample in order to remove its baseline and apply a low-pass filter to it:
 
-```
-%matplotlib inline
+```python
 from pylab import *
 from numpy import *
 from scipy import signal
@@ -135,7 +133,6 @@ http://bitalino.com/pyAPI/
 The example [LightsBIT.py](LightsBIT.py) (shown bellow) demonstrates how to read and change the [state](http://bitalino.com/pyAPI/#bitalino.BITalino.state) of the device. Whenever the program is executed, the LED actuator and the low battery indicator LED will turn ON if they were turned off and turn OFF otherwise, printing its state on screen.
 ```python
 import bitalino
-
 import numpy
 
 # Mac OS
