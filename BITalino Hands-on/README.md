@@ -141,7 +141,7 @@ The example [LightsBIT.py](LightsBIT.py) (shown bellow) demonstrates how to read
 
 To control the LED actuator, the [trigger](http://bitalino.com/pyAPI/#bitalino.BITalino.trigger) method is used, while the [battery](http://bitalino.com/pyAPI/#bitalino.BITalino.battery) method is used to obtain and change the low battery level threshold in such a way that the LED turns on or off.
 
-A detailed notebook version of this script is avaialble at [LightsBIT_steps.ipynb](detailed/LightsBIT_steps.ipynb)
+A detailed notebook version of this script is available at [LightsBIT_steps.ipynb](detailed/LightsBIT_steps.ipynb)
 
 **IMPORTANT NOTE:** You need to adapt the code so that the `macAddress` variable has the correct value for your operating system and device MAC address.
 
