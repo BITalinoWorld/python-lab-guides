@@ -119,7 +119,7 @@ data = loadtxt("SampleEMG.txt")
 
 emg_data = data[:,5]
 
-abs_data = abs(data-mean(data))
+abs_data = abs(emg_data-mean(emg_data))
 
 proc_data = lowpass(abs_data, 10) # filter with a lowpass filter at 10Hz
 
