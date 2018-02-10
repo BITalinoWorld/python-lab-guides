@@ -50,7 +50,7 @@ http://bitalino.com/en/software
 
 Once your BITalino is turned on, pair the device with your computer via the Bluetooth device manager using the PIN `1234` (this is a one-time process). Your device will be named `BITalino-XX-XX`, with `XX-XX` being the last four hex digits of your devices' MAC address.
 
-**IMPORTANT NOTE:** The MAC address is the sequence `XX:XX:XX:XX:XX:XX` found on the label on the back of the devices' BT block or on the back of the cardboard packaging where the device is shipped.
+**IMPORTANT NOTE:** The MAC address is the sequence `XX:XX:XX:XX:XX:XX` found on the label on the back of the devices' BT block and / or on the back of the cardboard packaging where the device is shipped.
 
 The following steps should guide you through to a first glimpse of your signals in real-time:
 
@@ -94,7 +94,7 @@ data = loadtxt("SampleEMG.txt")
 plot(data[:,5])
 ```
 
-Use this code in Spyder or in a Jupyter notebook (a detailed notebook version of this script can be seen at [LoadFile_steps.ipynb](detailed/LoadFile_steps.ipynb)).
+Use this code in Spyder or in a Jupyter notebook (an annotated notebook version of this script can be seen at [LoadFile_steps.ipynb](detailed/LoadFile_steps.ipynb)).
 
 **IMPORTANT NOTE:** In the `SampleEMG.txt` file, EMG data was recorded using the BITalino analog input `A1`, which corresponds to column `6` of the file; given that Python uses zero-based numbering for indexing, the data matrix is being sliced in column `5` (i.e. `data[:,5]`). Further information about the content of the files recorded using OpenSignals (r)evolution can be found at: http://forum.bitalino.com/viewtopic.php?f=15&t=481&p=1553#p1553  
 
@@ -102,9 +102,9 @@ Use this code in Spyder or in a Jupyter notebook (a detailed notebook version of
 ![bar](images/bitalinobar.jpg)
 ## 3. Post-Processing a Signal <a name="process"></a>
 
-Based on the previous code, another experience you can do is to compute the envelope of the EMG signal (i.e. smooth the absolute of the signal after removing the mean).
+Based on the previous code, another experience you can do is to compute the envelope of the EMG signal (i.e. smooth the absolute value of the signal after removing the mean).
 
-To facilitate this task, you can use Python script [ProcessFile.py](ProcessFile.py), which loads an EMG signal sample in order to remove its baseline and apply a low-pass filter to it:
+To facilitate this task, you can use the Python script [ProcessFile.py](ProcessFile.py), which loads an EMG signal sample in order to remove its baseline and apply a low-pass filter to it:
 
 ```python
 from pylab import *
@@ -141,7 +141,7 @@ The example [LightsBIT.py](LightsBIT.py) (shown bellow) demonstrates how to read
 
 To control the LED actuator, the [trigger](http://bitalino.com/pyAPI/#bitalino.BITalino.trigger) method is used, while the [battery](http://bitalino.com/pyAPI/#bitalino.BITalino.battery) method is used to obtain and change the low battery level threshold in such a way that the LED turns on or off.
 
-A detailed notebook version of this script is available at [LightsBIT_steps.ipynb](detailed/LightsBIT_steps.ipynb)
+An annotated notebook version of this script is available at [LightsBIT_steps.ipynb](detailed/LightsBIT_steps.ipynb)
 
 **IMPORTANT NOTE:** You need to adapt the code so that the `macAddress` variable has the correct value for your operating system and device MAC address.
 
@@ -165,18 +165,18 @@ device.trigger([toggle, 0])
 
 device.battery(0 if toggle else 63)
 
-print ("LIGHTS ON") if toggle else ("LIGHTS OFF")
+print ("LIGHTS ON" if toggle else "LIGHTS OFF")
 
 device.close()
 ```
 
 In the previous example, only when the program is executed an action is produced. Combining the same principles with a repetition structure introduces us to a more interactive behaviour.
 
-This is illustrated on our [ButtonBIT.py](ButtonBIT.py) example (shown bellow), where a loop continuously checks the [state](http://bitalino.com/pyAPI/#bitalino.BITalino.state) of the device and turns the LED actuator and low battery LED ON or OFF based on the state of the Pushbutton (BTN) sensor.
+This is illustrated on our [ButtonBIT.py](ButtonBIT.py) example (shown bellow), where a loop continuously checks the [state](http://bitalino.com/pyAPI/#bitalino.BITalino.state) of the device and turns the LED actuator and low battery LED ON or OFF, based on the state of the Pushbutton (BTN) sensor.
 
 By default, the BTN sensor is connected to the BITalino digital input `I1` (hence the fetching of `state['digitalChannels'][0]`), and depending on whether the button is pressed, the abovementioned LEDs will turn ON or OFF accordingly.
 
-A detailed version notebook of this script can be seen at [ButtonBIT_steps.ipynb](detailed/ButtonBIT_steps.ipynb)
+An annotated version notebook of this script can be seen at [ButtonBIT_steps.ipynb](detailed/ButtonBIT_steps.ipynb)
 
 ```python 
 import bitalino
@@ -199,7 +199,7 @@ while True:
     
     device.battery(0 if toggle else 63)
     
-    print ("LIGHTS ON") if toggle else ("LIGHTS OFF")
+    print ("LIGHTS ON" if toggle else "LIGHTS OFF")
 
 device.close()
 
@@ -215,13 +215,13 @@ Although many informal applications can cope with this operation model, for digi
 
 Our [MuscleBIT.py](MuscleBIT.py) example (shown bellow) illustrates this operation mode. The streaming process is initiated by calling the [start](http://bitalino.com/pyAPI/#bitalino.BITalino.start) method, in which a sampling rate and set of channels to be acquired can be specified.
 
-Once the device starts streaming, it is fundamental that the program reads the samples sent by the device in a timely and continuous (or near-continuous) manner, otherwise it will stop streaming automatically. In our example, this is achieved by putting the [read](http://bitalino.com/pyAPI/#bitalino.BITalino.read) method inside a repetition structure.
+Once the device starts streaming, it is fundamental that the program reads the samples sent by the device in a timely and continuous (or near-continuous) manner, otherwise it will stop streaming automatically. In our example, this is achieved by putting the call to the [read](http://bitalino.com/pyAPI/#bitalino.BITalino.read) method inside a repetition structure.
 
-This particular example computes the EMG signal envelope in real-time and turns the Buzzer (BUZ) actuator ON in case a certain threshold is exceeded. Pressing the BTN sensor for a few seconds will stop the program. 
+This particular example computes the EMG signal envelope in real-time and turns the Buzzer (BUZ) actuator on in case a certain threshold is exceeded. Pressing the BTN sensor for a few seconds will stop the program. 
 
-A detailed version notebook of this script can be seen at [MuscleBIT_steps.ipynb](detailed/MuscleBIT_steps.ipynb).
+An annotated version notebook of this script can be seen at [MuscleBIT_steps.ipynb](detailed/MuscleBIT_steps.ipynb).
 
-**IMPORTANT NOTE:** This is a time-critical operation and BITalino has a small internal buffer to accumulate samples (roughly less than 2 seconds), reason for which if the time in-between calls to the `read` method is much higher than the rate at which the device is streaming data (e.g. due to the time taken by calculations) the internal buffer will fill and the device will stop streaming data. An crucial component in this process is the amount of samples acquired from the device at a time; for additional information please refer to: http://forum.bitalino.com/viewtopic.php?t=129#p227
+**IMPORTANT NOTE:** This is a time-critical operation and BITalino has a small internal buffer to accumulate samples (roughly less than 2 seconds), reason for which if the time in-between calls to the `read` method is much higher than the rate at which the device is streaming data (e.g. due to the time taken by calculations) the internal buffer will fill and the device will stop streaming data. A crucial component in this process is the amount of samples acquired from the device at a time; for additional information please refer to: http://forum.bitalino.com/viewtopic.php?t=129#p227
 
 ```python
 import bitalino
@@ -270,16 +270,16 @@ finally:
 ![bar](images/bitalinobar.jpg)
 ## 6. Live on the Web Browser <a name="browser"></a>
 
-Struggling with data acquisition in Python?! We've handled part of the heavy load for you by creating [ServerBIT](https://github.com/BITalinoWorld/revolution-python-serverbit), an easy-to-install software bundle that runs in a service-like manner, continuously streaming data from the device to third-party applications (e.g. your web browser).
+Struggling with data acquisition in Python? We've handled part of the heavy load for you by creating [ServerBIT](https://github.com/BITalinoWorld/revolution-python-serverbit), an easy-to-install software bundle that runs in a service-like manner, continuously streaming data from the device to third-party applications (e.g. your web browser).
 
 Once installed, you need to configure the MAC address and channels to be acquired through the [config.json](https://github.com/BITalinoWorld/revolution-python-serverbit#settings-in-configjson) by following the instructions described here:  
 https://github.com/BITalinoWorld/revolution-python-serverbit#pre-configured-installers
 
-ServerBIT runs in a resilient manner, meaning that once it is launched it will automatically attempt to connect to your configured device and even if the device is not turned on or the connection is lost, it will periodically attempt to reconnect and resume the data streaming process. 
+ServerBIT runs in a resilient manner, meaning that once it is launched it will automatically attempt to connect to your configured device and, even if the device is not turned on or the connection is lost, it will periodically attempt to reconnect and resume the data streaming process. 
 
 Data is streamed using [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) technology, helping you receive the data stream even in a web browser. 
 
-With the ServerBIT running, is you open the [ClientBIT.html](https://github.com/BITalinoWorld/revolution-python-serverbit/blob/master/ClientBIT.html) sample web page (source code shown bellow) will display the signals from the sensor connected to channel `A1` in real time. 
+With the ServerBIT running, if you open the [ClientBIT.html](https://github.com/BITalinoWorld/revolution-python-serverbit/blob/master/ClientBIT.html) sample web page (source code shown bellow) the signals from the sensor connected to channel `A1` will be displayed in real time. 
 
 The `ClientBIT.html` user interface is implemented using open technologies, namely `HTML/CSS/JavaScript`, with graphics managed using the [Flot](http://www.flotcharts.org/flot/examples/basic-options/index.html) library, so feel free to scavange the web and fiddle with the source code to adapt it to your particular ideas.
 
