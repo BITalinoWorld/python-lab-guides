@@ -341,9 +341,9 @@ The `ClientBIT.html` user interface is implemented using open technologies, name
 
 - **Windows**
 
-    1. Install Anaconda **Python 2.7**  
+    1. Install Anaconda Python 2.7  
     
-    2. Install the BITalino API and its dependencies by typing the following on a `Command Line` window:
+    2. Install the BITalino API and its dependencies by typing the following on a Command Line window:
     
     3. Download the [BITalino API](https://github.com/BITalinoWorld/revolution-python-api) and move `bitalino.py` to a working directory of yours or add the containing folder to the `PYTHONPATH manager` on Spyder  
     
