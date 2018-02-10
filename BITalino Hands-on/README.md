@@ -340,7 +340,7 @@ The `ClientBIT.html` user interface is implemented using open technologies, name
 ### Python 2.7
 
 - **Windows**
-    1. Install Anaconda **Python 2.7**  
+    1. Install Anaconda **Python 2.7**
        
     2. Install the BITalino API and its dependencies by typing the following on a `Command Line` window:   
        ```
