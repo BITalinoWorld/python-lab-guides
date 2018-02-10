@@ -340,14 +340,12 @@ The `ClientBIT.html` user interface is implemented using open technologies, name
 ### Python 2.7
 
 - **Windows**
-    - Install Anaconda **Python 2.7**
-       
+    - Install Anaconda **Python 2.7**  
     - Install the BITalino API and its dependencies by typing the following on a `Command Line` window:   
        ```
        pip install bitalino
        ```  
     - Download the [BITalino API](https://github.com/BITalinoWorld/revolution-python-api) and move `bitalino.py` to a working directory of yours or add the containing folder to the `PYTHONPATH manager` on Spyder  
-    
     - Test `LightsBIT.py` (e.g. with a Jupyter notebook test file); you should see the LED actuator turning ON or OFF  
 
 - **Mac OS**
