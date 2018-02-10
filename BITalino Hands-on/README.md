@@ -367,7 +367,7 @@ conda install bitalino
 
 ### Python 3
 
-- **Windows**  
+#### Windows
     
 1. Install [Anaconda **Python 3**](https://www.anaconda.com/download/)  
        
@@ -381,7 +381,7 @@ conda install bitalino
     
 5. Test `LightsBIT.py` (e.g. with a Jupyter notebook test file); you should see the LED actuator turning ON or OFF  
 
-- **Mac OS**  
+#### Mac OS
 
 1. Install [Anaconda **Python 3**](https://www.anaconda.com/download)  
        
