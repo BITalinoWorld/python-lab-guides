@@ -343,8 +343,8 @@ The `ClientBIT.html` user interface is implemented using open technologies, name
   1. Install Anaconda **Python 2.7** from:  
      https://www.anaconda.com/download/
 
-  2. Install the BITalino API and its dependencies by typing the following on a `Command Line` window: 
-    ```bash
+  2. Install the BITalino API and its dependencies by typing the following on a `Command Line` window:   
+    ```
     pip install bitalino
     ```
 
@@ -356,8 +356,8 @@ The `ClientBIT.html` user interface is implemented using open technologies, name
   1. Install Anaconda **Python 2.7** from:  
      https://www.anaconda.com/download/
 
-  2. Install the BITalino API and its dependencies by typing the following on a `Terminal.app` window: 
-    ```bash
+  2. Install the BITalino API and its dependencies by typing the following on a `Terminal.app` window:  
+    ```
     conda install bitalino
     ```
 
@@ -368,7 +368,7 @@ The `ClientBIT.html` user interface is implemented using open technologies, name
 
 - **Windows**
   1. Install Anaconda **Python 3** from:  
-     https://www.anaconda.com/download/#macos
+     https://www.anaconda.com/download/
 
   2. Install `PySerial` for Python 3 from:  
      https://pypi.python.org/pypi/pyserial/3.0
@@ -384,8 +384,8 @@ The `ClientBIT.html` user interface is implemented using open technologies, name
   1. Install Anaconda **Python 3** from:  
      https://www.anaconda.com/download/#macos
 
-  2. Install the BITalino API and its dependencies by typing the following on a `Terminal.app` window: 
-    ```bash
+  2. Install the BITalino API and its dependencies by typing the following on a `Terminal.app` window:  
+    ```
     conda install bitalino
     ```
 
