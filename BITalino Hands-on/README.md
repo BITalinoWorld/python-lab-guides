@@ -339,7 +339,7 @@ The `ClientBIT.html` user interface is implemented using open technologies, name
 
 ### Python 2.7
 
-#### Windows
+- Windows
 
 1. Install [Anaconda **Python 2.7**](https://www.anaconda.com/download/)  
    
@@ -353,7 +353,7 @@ pip install bitalino
 4. Run `bitalino.py` (e.g. with a Jupyter notebook test file); you should see data collected by BITalino printed on the console
  
     
-#### Mac OS  
+- Mac OS  
 
 1. Install [Anaconda **Python 2.7**](https://www.anaconda.com/download/)  
        
