@@ -337,7 +337,7 @@ The `ClientBIT.html` user interface is implemented using open technologies, name
 ![bar](images/bitalinobar.jpg)
 ## A. Installation Notes <a name="installationnotes"></a>
 
-
+<!--
 ### On Windows (for Python 3)
 
 1. Install Anaconda3-4.2.0 (most recent with Python 3.5) according to your system from: 
@@ -404,5 +404,7 @@ PyBluez‑0.22‑cp27‑none‑win_amd64.whl
     ```
 
 4. Test `LightsBIT.py` (e.g. with a Jupyter notebook test file); you should see the LED actuator turning ON or OFF
+
+-->
 
 
