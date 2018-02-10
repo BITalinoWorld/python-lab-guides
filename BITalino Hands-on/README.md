@@ -36,11 +36,11 @@ http://bitalino.com/en/software
 
 - Enjoy executing some code (e.g. by launching a Jupyter notebook)
 
-- Prepare your device by connecting the battery (i.e. slide the battery connector onto the white socket on the BITalino PWR block) 
+- Prepare your device by connecting the battery (i.e. slide the battery connector onto the white socket on the BITalino block labelled as PWR) 
 
 - Turn your device on by sliding the power button to the ON position; a white LED will start fading in / out, meaning that the device is in standby
 
-- Get familiar with the architecture of **BITalino** ([datasheet](http://bitalino.com/datasheets/REVOLUTION_BITalino_Board_Kit_Datasheet.pdf)).
+- Get familiar with the architecture of **BITalino** ([datasheet](http://bitalino.com/datasheets/REVOLUTION_BITalino_Board_Kit_Datasheet.pdf))
 
 ![IMAGE ALT TEXT](images/BITalino_cut.jpg)
 
