@@ -350,7 +350,7 @@ pip install bitalino
 
 3. Download the [BITalino API](https://github.com/BITalinoWorld/revolution-python-api) and move `bitalino.py` to a working directory of yours or add the containing folder to the `PYTHONPATH manager` on Spyder  
 
-4. Test `LightsBIT.py` (e.g. with a Jupyter notebook test file); you should see the LED actuator turning ON or OFF  
+4. Run `bitalino.py` (e.g. with a Jupyter notebook test file); you should see data collected by BITalino printed on the console
  
     
 #### Mac OS  
@@ -379,7 +379,7 @@ conda install bitalino
        
 4. Download the [BITalino API](https://github.com/BITalinoWorld/revolution-python-api) and move `bitalino.py` to a working directory of yours or add the containing folder to the `PYTHONPATH manager` on Spyder  
     
-5. Test `LightsBIT.py` (e.g. with a Jupyter notebook test file); you should see the LED actuator turning ON or OFF  
+5. Test `bitalino.py` (e.g. with a Jupyter notebook test file); you should see data collected by BITalino printed on the console
 
 #### Mac OS
 
