@@ -16,7 +16,7 @@ nframes = 100
 threshold = 5
 
 device.start(srate, [0])
-print "START"
+print("START")
 
 try:
     while True:
@@ -35,6 +35,6 @@ try:
             device.trigger([0, 0])
 
 finally:
-    print "STOP"
+    print("STOP")
     device.stop()
     device.close()
