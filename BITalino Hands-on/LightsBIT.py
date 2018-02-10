@@ -15,6 +15,6 @@ toggle = 1-state['digitalChannels'][2]
 
 device.trigger([toggle, 0])
 
-print "LIGHTS ON" if toggle else "LIGHTS OFF"
+print ("LIGHTS ON" if toggle else "LIGHTS OFF")
 
 device.close()
