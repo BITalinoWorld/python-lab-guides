@@ -28,6 +28,9 @@ https://github.com/BITalinoWorld/revolution-python-serverbit
 - Install OpenSignals (r)evolution Software:  
 http://bitalino.com/en/software
 
+- Install the BioSPPy Toolbox (may come in handy):  
+https://github.com/PIA-Group/BioSPPy
+
 - Get a good code editor:  
 
     - **Spyder** is already included with Anaconda *or*
