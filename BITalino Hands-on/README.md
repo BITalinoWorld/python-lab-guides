@@ -6,7 +6,7 @@ Adapted by Miquel Alfaras and Hugo Gamboa.*
 [1. Acquisition](#acq)  
 [2. Opening Recorded Data in Python](#opensignal)  
 [3. Post-Processing a Signal](#process)  
-[4. Measure and Actuate with BITalino](#measure)  
+[4. Asynchronous Measurement and Control](#measure)  
 [5. Real-Time Signal Processing](#online)  
 [6. Live on the Web Browser](#browser)  
 [7. External Links](#external)  
@@ -86,20 +86,20 @@ The following steps should guide you through to a first glimpse of your signals 
 ![bar](images/bitalinobar.jpg)
 ## 2. Opening Recorded Data in Python <a name="opensignal"></a>
 
-Locate a recording on your hard drive; for your convenience, we provide the [SampleEMG.txt](SampleEMG.txt) file with a snippet of Electromyography (EMG) data.
+Locate a recording on your hard drive; for your convenience, we provide the [SampleACC.txt](SampleACC.txt) file with a snippet of Accelerometry (ACC) data.
 
 You can make a simple experiment using the Python script [LoadFile.py](LoadFile.py); this code uses the function [loadtxt](https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.loadtxt.html) (in this case made available through the `PyLab` module), to load the recorded data onto a variable in your program and display it in a graphic:
 ```python
 from pylab import *
 
-data = loadtxt("SampleEMG.txt")
+data = loadtxt("SampleACC.txt")
 
 plot(data[:,5])
 ```
 
 Use this code in Spyder or in a Jupyter notebook (an annotated notebook version of this script can be seen at [LoadFile_steps.ipynb](detailed/LoadFile_steps.ipynb)).
 
-**IMPORTANT NOTE:** In the `SampleEMG.txt` file, EMG data was recorded using the BITalino analog input `A1`, which corresponds to column `6` of the file; given that Python uses zero-based numbering for indexing, the data matrix is being sliced in column `5` (i.e. `data[:,5]`). Further information about the content of the files recorded using OpenSignals (r)evolution can be found at: http://forum.bitalino.com/viewtopic.php?f=15&t=481&p=1553#p1553  
+**IMPORTANT NOTE:** In the `SampleACC.txt` file, ACC data was recorded using the BITalino analog input `A5`, and can be found on column `6` of the file; given that Python uses zero-based numbering for indexing, the data matrix is being sliced in column `5` (i.e. `data[:,5]`). Further information about the content of the files recorded using OpenSignals (r)evolution can be found at: http://forum.bitalino.com/viewtopic.php?f=15&t=481&p=1553#p1553  
 
 
 ![bar](images/bitalinobar.jpg)
@@ -133,7 +133,7 @@ plot(proc_data)
 
 
 ![bar](images/bitalinobar.jpg)
-## 4. Measure and Actuate with BITalino (Asynchronous) <a name="measure"></a>
+## 4. Asynchronous Measurement and Control <a name="measure"></a>
 
 Until now we've seen how to work with data recorded using OpenSignals (r)evolution in post-processing tasks, however, it is also possible to interact with the device directly from your Python program.
 
