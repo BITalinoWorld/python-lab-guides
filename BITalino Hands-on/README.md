@@ -5,11 +5,12 @@ Adapted by Miquel Alfaras and Hugo Gamboa.*
 [0. Setting up](#settingup)  
 [1. Acquisition](#acq)  
 [2. Opening Recorded Data in Python](#opensignal)  
-[3. Post-Processing a Signal](#process)  
-[4. Asynchronous Measurement and Control](#measure)  
-[5. Real-Time Signal Processing](#online)  
-[6. Live on the Web Browser](#browser)  
-[7. External Links](#external)  
+[3. Post-Processing a Signal](#process)
+[4. Analyzing your Data](#analize)
+[5. Asynchronous Measurement and Control](#measure)  
+[6. Real-Time Signal Processing](#online)  
+[7. Live on the Web Browser](#browser)  
+[8. External Links](#external)  
   
 [A. Installation Notes (Python)](#installationnotes)
 
@@ -105,7 +106,7 @@ Use this code in Spyder or in a Jupyter notebook (an annotated notebook version 
 ![bar](images/bitalinobar.jpg)
 ## 3. Post-Processing a Signal <a name="process"></a>
 
-Based on the previous code, another experience you can do is to compute the envelope of the EMG signal (i.e. smooth the absolute value of the signal after removing the mean).
+Based on the previous code, another experiment you can do is to compute the envelope of the EMG signal (i.e. smooth the absolute value of the signal after removing the mean).
 
 To facilitate this task, you can use the Python script [ProcessFile.py](ProcessFile.py), which loads an EMG signal sample in order to remove its baseline and apply a low-pass filter to it:
 
@@ -133,7 +134,45 @@ plot(proc_data)
 
 
 ![bar](images/bitalinobar.jpg)
-## 4. Asynchronous Measurement and Control <a name="measure"></a>
+## 4. Analyzing your Data <a name="analize"></a>
+
+Python is often referred to as "the batteries included language", meaning that there are plenty of useful modules either bundled or contributed by the community. Biosignals are no exception and some libraries already bundle basic signal processing and analytics components. 
+
+One experiment you can do, is to extract the heartbeat waveforms and determine the instant heart rate for an ECG signal using the BioSPPy toolbox. To facilitate this task, you can use the Python script [AnalyzeFile.py](AnalyzeFile.py), which loads an ECG signal sample in order to filter it, extract several convenient features and plot them in a chart:
+
+```python
+from pylab import *
+from biosppy.signals import ecg
+
+data = loadtxt("SampleECG.txt")[:,-1]
+
+out = ecg.ecg(signal=data, sampling_rate=1000., show=True)
+```
+
+In the previous example, the toolbox is used in a more automated manner to take in raw data and produce a graphical output. However, you also have the possibility to access the extracted features and manipulate them directly. The following experiment demonstrates just that; the raw data is processed using the toolbox, plotted against the filtered version and annotated with vertical lines placed on the positions of the R-peaks.
+
+```python
+from pylab import *
+from biosppy.signals import ecg
+
+data = loadtxt("SampleECG.txt")[:,-1]
+
+out = ecg.ecg(signal=data, sampling_rate=1000., show=False)
+
+raw = data-data.mean()
+filtered = out['filtered']-out['filtered'].mean()
+
+plot(raw)
+plot(filtered, 'k')
+
+vlines(out['rpeaks'], min(raw)*2, max(raw)*2, 'gray', 'dashed')
+
+legend(['raw', 'filtered', 'R-peaks'])
+```
+
+
+![bar](images/bitalinobar.jpg)
+## 5. Asynchronous Measurement and Control <a name="measure"></a>
 
 Until now we've seen how to work with data recorded using OpenSignals (r)evolution in post-processing tasks, however, it is also possible to interact with the device directly from your Python program.
 
@@ -210,7 +249,7 @@ device.close()
 
 
 ![bar](images/bitalinobar.jpg)
-## 5. Real-Time Signal Processing <a name="online"></a>
+## 6. Real-Time Signal Processing <a name="online"></a>
 
 In the previous section we have seen how to asynchronously interface with BITalino from within a Python program. A big downside of asynchronous communication is the fact that the time in-between readings (i.e. sampling interval) is variable. 
 
@@ -271,7 +310,7 @@ finally:
 
 
 ![bar](images/bitalinobar.jpg)
-## 6. Live on the Web Browser <a name="browser"></a>
+## 7. Live on the Web Browser <a name="browser"></a>
 
 Struggling with data acquisition in Python? We've handled part of the heavy load for you by creating [ServerBIT](https://github.com/BITalinoWorld/revolution-python-serverbit), an easy-to-install software bundle that runs in a service-like manner, continuously streaming data from the device to third-party applications (e.g. your web browser).
 
@@ -320,7 +359,7 @@ The `ClientBIT.html` user interface is implemented using open technologies, name
 
 
 ![bar](images/bitalinobar.jpg)
-## 7. External Links <a name="external"></a>
+## 8. External Links <a name="external"></a>
 
 - BITalino Forum allows you to learn, share and discuss your experiences with others:   
   http://forum.bitalino.com/
@@ -331,6 +370,9 @@ The `ClientBIT.html` user interface is implemented using open technologies, name
 - BITalino APIs for several other languages can be found at:  
   http://bitalino.com/en/development/apis
 
+- BioSPPy toolbox documentation is available here:  
+  http://biosppy.readthedocs.io/en/stable/  
+  
 - BITalinoWorld channel on YouTube has a few nifty videos:  
   https://www.youtube.com/user/BITalinoWorld/videos
 
