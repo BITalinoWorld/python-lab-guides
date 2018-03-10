@@ -147,7 +147,9 @@ from biosppy.signals import ecg
 data = loadtxt("SampleECG.txt")[:,-1]
 
 out = ecg.ecg(signal=data, sampling_rate=1000., show=True)
-```
+
+```  
+![IMAGE ALT TEXT](images/ECG_Summary.png)
 
 In the previous example, the toolbox is used in a more automated manner to take in raw data and produce a graphical output. However, you also have the possibility to access the extracted features and manipulate them directly. The following experiment demonstrates just that; the raw data is processed using the toolbox, plotted against the filtered version and annotated with vertical lines placed on the positions of the R-peaks.
 
@@ -169,6 +171,7 @@ vlines(out['rpeaks'], min(raw)*2, max(raw)*2, 'gray', 'dashed')
 
 legend(['raw', 'filtered', 'R-peaks'])
 ```
+![IMAGE ALT TEXT](images/ECG_Plot.png)  
 
 
 ![bar](images/bitalinobar.jpg)
