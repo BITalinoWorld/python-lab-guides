@@ -98,6 +98,8 @@ data = loadtxt("SampleACC.txt")
 plot(data[:,5])
 ```
 
+![IMAGE ALT TEXT](images/ACC_Plot.png)  
+
 Use this code in Spyder or in a Jupyter notebook (an annotated notebook version of this script can be seen at [LoadFile_steps.ipynb](detailed/LoadFile_steps.ipynb)).
 
 **IMPORTANT NOTE:** In the `SampleACC.txt` file, ACC data was recorded using the BITalino analog input `A5`, and can be found on column `6` of the file; given that Python uses zero-based numbering for indexing, the data matrix is being sliced in column `5` (i.e. `data[:,5]`). Further information about the content of the files recorded using OpenSignals (r)evolution can be found at: http://forum.bitalino.com/viewtopic.php?f=15&t=481&p=1553#p1553  
@@ -127,10 +129,12 @@ abs_data = abs(emg_data-mean(emg_data))
 
 proc_data = lowpass(abs_data, 10) # filter with a lowpass filter at 10Hz
 
-plot(data)
+plot(emg_data)
 
 plot(proc_data)
 ```
+
+![IMAGE ALT TEXT](images/EMG_Plot.png)  
 
 
 ![bar](images/bitalinobar.jpg)
