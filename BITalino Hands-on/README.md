@@ -6,7 +6,7 @@ Adapted by Miquel Alfaras and Hugo Gamboa.*
 [1. Acquisition](#acq)  
 [2. Opening Recorded Data in Python](#opensignal)  
 [3. Post-Processing a Signal](#process)
-[4. Analyzing your Data](#analize)
+[4. Analyzing your Data](#analize)  
 [5. Asynchronous Measurement and Control](#measure)  
 [6. Real-Time Signal Processing](#online)  
 [7. Live on the Web Browser](#browser)  
