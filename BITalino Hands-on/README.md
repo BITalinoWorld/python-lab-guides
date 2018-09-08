@@ -310,8 +310,8 @@ try:
             device.trigger([0, 0])
 
 finally:
-    device.trigger([0, 0])
     print ("STOP")
+    device.trigger([0, 0])
     device.stop()
     device.close()
 ```
